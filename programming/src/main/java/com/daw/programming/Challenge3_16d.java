@@ -21,6 +21,7 @@ public class Challenge3_16d {
             System.out.println("(C) The supercrazy party");
             System.out.println("Escribe la letra del partido que quieres votar");
             vote = keyboard1.nextLine();
+            vote = vote.toUpperCase();
         }
         if (vote.equals("A")) {
             System.out.println("Has votado al partido politico The cool party");
