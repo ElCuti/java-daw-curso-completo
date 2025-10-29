@@ -8,12 +8,11 @@ public class Challenge3_16f {
         char letterName = ' ';
         boolean space = false;
         Scanner keyboard1 = new Scanner(System.in);
-        System.out.println("Escribe la letra que quieras comprobar si es vocal");
+        System.out.println("Escribe tu nombre para verlo de distintas maneras");
         String completeName = keyboard1.nextLine();
 
         System.out.println("Tu nombre en minusculas es: " + completeName.toLowerCase());
         System.out.println("Tu nombre en mayusculas es: " + completeName.toUpperCase());
-        System.out.println(" ");
         System.out.print("Tu nombre escrito con las iniciales en mayusculas es: ");
         for (int count = 0; count < completeName.length(); count++) {
             letterName = completeName.charAt(count);
