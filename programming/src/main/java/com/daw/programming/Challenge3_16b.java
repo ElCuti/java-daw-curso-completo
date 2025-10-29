@@ -39,7 +39,7 @@ public class Challenge3_16b {
                     System.out.println("- Has puesto el mismo numero en el uno y en el dos, ambos son los mas altos: " + num1);
                 } else if (num1 == num3) {
                     System.out.println("- Has puesto el mismo numero en el uno y en el tres, ambos son los mas altos: " + num1);
-                } else if (num2 == num3) {
+                } else {
                     System.out.println("- Has puesto el mismo numero en el dos y en el tres, ambos son los mas altos: " + num2);
                 }
             }
