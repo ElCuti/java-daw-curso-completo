@@ -5,13 +5,12 @@ import java.util.Scanner;
 public class Challenge3_16g {
 
     public static void main(String[] args) {
-        int saveScript1 = 0;
-        int saveScript2 = 0;
+        int saveScript = 0;
         Scanner keyboard1 = new Scanner(System.in);
         System.out.println("Escribe tu numero de telefono completo: ");
         /*String completeName = keyboard1.nextLine();*/
         String completeNumber = "+34-968123456-789";
-
+/*
         for (int count = 0; count < completeNumber.length(); count++) {
             char number = completeNumber.charAt(count);
             String stringNumber = String.valueOf(number);
@@ -23,8 +22,13 @@ public class Challenge3_16g {
                 }
             }
         }
+*/
+        saveScript = completeNumber.indexOf("-");
+        completeNumber = completeNumber.substring(saveScript+1);
+        saveScript = completeNumber.indexOf("-");
+        completeNumber = completeNumber.substring(0, saveScript);
         System.out.println();
         System.out.print("Este es tu numero limpio: ");
-        System.out.print(completeNumber.substring(saveScript1+1, saveScript2));
+        System.out.print(completeNumber);
     }
 }
