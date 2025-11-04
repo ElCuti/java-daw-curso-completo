@@ -10,7 +10,8 @@ public class Challenge3_16n {
         Scanner keyboard1 = new Scanner(System.in);
         System.out.println("Escribe una frase");
         String completeSentence = keyboard1.nextLine();
-        System.out.println("Escribe que vocal quieres cambiar");
+        completeSentence = completeSentence.toLowerCase();
+        System.out.println("Escribe que letra quieres encontrar");
         String vowel = keyboard1.nextLine();
         vowel = vowel.toLowerCase();
         for (int count = 0; count < completeSentence.length(); count++) {
@@ -18,8 +19,8 @@ public class Challenge3_16n {
             String stringSentence = String.valueOf(letterSentence);
             if (stringSentence.equals(vowel)) {
                 vowelvalue++;
-            } 
+            }
         }
-        System.out.println("La frase conteniene una cantidad de repeticiones de ("+vowel+") de: "+vowelvalue);
+        System.out.println("La frase conteniene una cantidad de repeticiones de (" + vowel + ") de: " + vowelvalue);
     }
 }
