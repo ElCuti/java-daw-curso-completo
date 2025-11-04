@@ -8,10 +8,10 @@ public class Challenge3_16l {
         Scanner keyboard1 = new Scanner(System.in);
         int numUser = 20000;
         int numImpar = 1;
-        //do {
-        //    System.out.println("Pon un numero positivo y te dire todos los numeros impares que lleva atras: ");
-       //     numUser = keyboard1.nextInt();
-       // } while (numUser <= 0);
+        do {
+            System.out.println("Pon un numero positivo y te dire todos los numeros impares que lleva atras: ");
+            numUser = keyboard1.nextInt();
+        } while (numUser <= 0);
 
         if ((numUser % 2) == 0) {
             numUser--;
