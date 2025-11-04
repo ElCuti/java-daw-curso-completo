@@ -12,7 +12,7 @@ public class Challenge3_16h {
         System.out.println("Escribe que vocal quieres cambiar");
         String vowel = keyboard1.nextLine();
         vowel = vowel.toLowerCase();
-        while (vowel.length() > 1 && (!vowel.equals("a") || !vowel.equals("e") || !vowel.equals("i") || !vowel.equals("o") || !vowel.equals("u"))) {
+        while (vowel.length() != 1 && (!vowel.equals("a") || !vowel.equals("e") || !vowel.equals("i") || !vowel.equals("o") || !vowel.equals("u"))) {
             System.out.println("Porfavor, solo una vocal: ");
             vowel = keyboard1.nextLine();
             vowel = vowel.toLowerCase();

@@ -2,10 +2,6 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
-/**
- *
- * @author Alumnado
- */
 public class Challenge3_16m {
 
     public static void main(String[] args) {
@@ -19,19 +15,15 @@ public class Challenge3_16m {
         for (int count = 1; count < numUser;) {
             count++;
             if ((numUser % count) != 0) {
-
             } else if (numUser == count) {
-                
-            }
-            else{
-                System.out.println("El numero "+numUser+" no es primo");
+            } else {
+                System.out.println("El numero " + numUser + " no es primo");
                 primeNum = false;
                 break;
             }
-
         }
-        if (primeNum){
-            System.out.println("El numero "+numUser+" es primo"); 
+        if (primeNum) {
+            System.out.println("El numero " + numUser + " es primo");
         }
     }
 }
