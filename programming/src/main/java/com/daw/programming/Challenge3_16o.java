@@ -13,37 +13,26 @@ public class Challenge3_16o {
         System.out.println("Bienvenido a Goya Chicken, dime cuantas piezas de nuggets quieres?: ");
         int cantidadPollo = keyboard1.nextInt();
         System.out.println("En ese caso...");
-        for (polloDiez = 0; polloDiez * 10 <= cantidadPollo; polloDiez++) {
-            if (pedidoCompleto) {
-
-            } else {
-
-                for (polloSiete = 0; polloSiete * 7 <= cantidadPollo; polloSiete++) {
-                    if (pedidoCompleto) {
-
-                    } else {
-                        for (polloCuatro = 0; polloCuatro * 4 <= cantidadPollo; polloCuatro++) {
-                            if ((polloCuatro * 4) + (polloSiete * 7) + (polloDiez * 10) == cantidadPollo) {
-                                pedidoCompleto = true;
-                                System.out.println("Opcion");
-                                if (polloDiez > 0) {
-                                    System.out.println("- " + polloDiez + " paquetes de 10 piezas");
-                                }
-                                if (polloSiete > 0) {
-                                    System.out.println("- " + polloSiete + " paquetes de 7 piezas");
-                                }
-                                if (polloCuatro > 0) {
-                                    System.out.println("- " + polloCuatro + " paquetes de 4 piezas");
-                                }
-                            }
-
+        for (polloDiez = 0; polloDiez * 10 <= cantidadPollo && !pedidoCompleto; polloDiez++) {
+            for (polloSiete = 0; polloSiete * 7 <= cantidadPollo && !pedidoCompleto; polloSiete++) {
+                for (polloCuatro = 0; polloCuatro * 4 <= cantidadPollo; polloCuatro++) {
+                    if ((polloCuatro * 4) + (polloSiete * 7) + (polloDiez * 10) == cantidadPollo) {
+                        pedidoCompleto = true;
+                        System.out.println("Opcion");
+                        if (polloDiez > 0) {
+                            System.out.println("- " + polloDiez + " paquetes de 10 piezas");
+                        }
+                        if (polloSiete > 0) {
+                            System.out.println("- " + polloSiete + " paquetes de 7 piezas");
+                        }
+                        if (polloCuatro > 0) {
+                            System.out.println("- " + polloCuatro + " paquetes de 4 piezas");
                         }
                     }
                 }
-                if (pedidoCompleto) {
-                    break;
-                }
-
+            }
+            if (pedidoCompleto) {
+                break;
             }
         }
         if (!pedidoCompleto) {
