@@ -13,15 +13,11 @@ public class Challenge3_16o {
         System.out.println("Bienvenido a Goya Chicken, dime cuantas piezas de nuggets quieres?: ");
         int cantidadPollo = keyboard1.nextInt();
         System.out.println("En ese caso...");
+        for (polloDiez = 0; polloDiez * 10 <= cantidadPollo; polloDiez++) {
+            if (pedidoCompleto) {
 
-        while ((polloCuatro * 4) + (polloSiete * 7) + (polloDiez * 10) != cantidadPollo) {
-            for (polloDiez = 0; polloDiez * 10 <= cantidadPollo; polloDiez++) {
-                if (pedidoCompleto) {
-                    
-                }
-                else{
-                    
-                }
+            } else {
+
                 for (polloSiete = 0; polloSiete * 7 <= cantidadPollo; polloSiete++) {
                     if (pedidoCompleto) {
 
@@ -44,12 +40,15 @@ public class Challenge3_16o {
                         }
                     }
                 }
-            }
-            if (pedidoCompleto) {
-                break;
+                if (pedidoCompleto) {
+                    break;
+                }
+
             }
         }
-
+        if (!pedidoCompleto) {
+            System.out.println("No podemos darte esa cantidad de pollo exacta... Lo sentimos");
+        }
     }
 }
 /* Faltan un par de IF y tambien funcionaria
