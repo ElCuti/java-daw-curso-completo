@@ -8,13 +8,14 @@ public class Challenge3_16p {
         int sumaCompleta = 0;
         int numeroUsuario = 0;
         Scanner keyboard1 = new Scanner(System.in);
-        System.out.println("Inserta los numeros que quieras ir sumando hasta llegar a 0 ");
+
         do {
             do {
+                System.out.println("Inserta los numeros que quieras ir sumando hasta llegar a 0 ");
                 numeroUsuario = keyboard1.nextInt();
             } while (numeroUsuario < 0);
-            sumaCompleta +=numeroUsuario;
+            sumaCompleta += numeroUsuario;
         } while (numeroUsuario != 0);
-        System.out.println("Tu suma completa es: "+sumaCompleta);
+        System.out.println("Tu suma completa es: " + sumaCompleta);
     }
 }
