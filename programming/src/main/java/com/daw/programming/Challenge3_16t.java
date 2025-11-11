@@ -13,7 +13,7 @@ public class Challenge3_16t {
         String abecedarioL = "abcdefghijklmnopqrstuvwxyz";
         String abecedarioU = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         System.out.print("- Tu palabra secreta es: ");
-        for (int count = 0; count <= userInput.length() - 1; count++) {
+        for (int count = 0; count < userInput.length(); count++) {
             int indexAbc = 0;
             char vowelE = ' ';
             char vowel = userInput.charAt(count);
@@ -27,9 +27,7 @@ public class Challenge3_16t {
                     indexAbc = abecedarioL.indexOf(stringVowel);
                 }
                 indexAbc = indexAbc + userNumber;
-                while (indexAbc >= 26) {
-                    indexAbc -= 26;
-                }
+                indexAbc = indexAbc % 26;
 
                 if (stringVowel.toUpperCase().equals(stringVowel)) {
                     vowelE = abecedarioU.charAt(indexAbc);

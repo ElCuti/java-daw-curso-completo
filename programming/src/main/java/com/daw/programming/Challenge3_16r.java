@@ -14,7 +14,7 @@ public class Challenge3_16r {
             number = rows * 2 - 1;
             count++;
             System.out.println();
-            for (int column = 1; column <= count; column++) {
+            for (int column = 1; column <= rows; column++) {
                 System.out.print(number);
                 System.out.print(" ");
                 number -= 2;
