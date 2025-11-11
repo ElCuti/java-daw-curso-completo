@@ -12,7 +12,7 @@ public class Challenge3_16t {
         int userNumber = keyboard1.nextInt();
         String abecedarioL = "abcdefghijklmnopqrstuvwxyz";
         String abecedarioU = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        System.out.println("- Tu palabra secreta es: ");
+        System.out.print("- Tu palabra secreta es: ");
         for (int count = 0; count <= userInput.length() - 1; count++) {
             int indexAbc = 0;
             char vowelE = ' ';
@@ -27,7 +27,7 @@ public class Challenge3_16t {
                     indexAbc = abecedarioL.indexOf(stringVowel);
                 }
                 indexAbc = indexAbc + userNumber;
-                if (indexAbc >= 26) {
+                while (indexAbc >= 26) {
                     indexAbc -= 26;
                 }
 
