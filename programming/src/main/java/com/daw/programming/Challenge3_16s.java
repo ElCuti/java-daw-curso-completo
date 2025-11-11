@@ -33,9 +33,9 @@ public class Challenge3_16s {
                 System.out.println("- - - - SECCION TERMINADA - - - -");
                 System.out.println("- Han aparecido " + countNumber + " numeros");
                 System.out.println();
-                
+
             }
-            if (!stringVowel.equals("")){
+            if (!stringVowel.equals("")) {
                 countNumber = 0;
                 countSection++;
             }
