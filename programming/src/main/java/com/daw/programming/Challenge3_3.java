@@ -2,6 +2,13 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
+/**
+ * Create a class named "Challenge3_3.java". 
+ * Create two variables to store two
+ * numbers. The user should supply this numbers by using the keyboard. By using
+ * the if..else statements, show a message on screen telling if the first number
+ * is smaller than, equal to or greater than the second one.
+ */
 public class Challenge3_3 {
 
     public static void main(String[] args) {

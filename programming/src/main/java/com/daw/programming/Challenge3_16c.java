@@ -2,6 +2,12 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
+/*
+c.      Starting or ending by the same letter?.
+Ask to the user for the name of 2 persons and store them into variables.
+Then you have to print “coincidence” if the names of both persons start by the same letter or if they finish by the same letter. 
+In any other case, print “there is NO coincidence”.
+ */
 public class Challenge3_16c {
 
     public static void main(String[] args) {

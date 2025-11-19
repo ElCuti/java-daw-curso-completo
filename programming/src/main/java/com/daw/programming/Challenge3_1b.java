@@ -1,11 +1,15 @@
 package com.daw.programming;
+
 import javax.swing.*;
 import java.util.Arrays;
+
 /**
+ * Create a class named "Challenge3_1b.java".
  *
- * @author Alumnado
+ * Investigate the way of reading a password from console and make an example.
  */
 public class Challenge3_1b {
+
     public static void main(String[] args) {
         JPasswordField pf1 = new JPasswordField();
         int res1 = JOptionPane.showConfirmDialog(
@@ -16,7 +20,7 @@ public class Challenge3_1b {
                 JOptionPane.QUESTION_MESSAGE
         );
         if (res1 != JOptionPane.OK_OPTION) {
-            return; 
+            return;
         }
         char[] passwordUser = pf1.getPassword();
 
@@ -29,7 +33,7 @@ public class Challenge3_1b {
                 JOptionPane.INFORMATION_MESSAGE
         );
         if (res2 != JOptionPane.OK_OPTION) {
-            Arrays.fill(passwordUser, ' '); 
+            Arrays.fill(passwordUser, ' ');
             return;
         }
         char[] passwordTry = pf2.getPassword();

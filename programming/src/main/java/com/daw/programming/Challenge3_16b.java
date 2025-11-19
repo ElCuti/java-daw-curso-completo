@@ -2,6 +2,10 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
+/*
+b.     Comparing 3 numbers.
+Read 3 numbers by the keyboard. Tell which number is the greater.
+ */
 public class Challenge3_16b {
 
     public static void main(String[] args) {

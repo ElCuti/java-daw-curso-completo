@@ -1,14 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.daw.programming;
 
 import java.util.Scanner;
 
 /**
+ * Create a class named "Challenge3_11.java".
  *
- * @author Alumnado
+ * Store in a variable the text introduced by the user by using the keyboard.
+ *
+ * Print this text in uppercase, lowercase and say how many characters does the
+ * text have.
  */
 public class Challenge3_11 {
 

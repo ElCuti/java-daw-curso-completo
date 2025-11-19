@@ -1,11 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.daw.programming;
 
 import java.util.Scanner;
 
+/*
+Create a class named "Challenge3_14.java".
+Store in a variable the text introduced by the user by using the keyboard.
+Imagine we are going to use this text as a password. We have to say if this password has at least one character in lowercase and one character in uppercase.
+b) [OPTIONAL] We have to say if this password has at least one character in lowercase, one character in uppercase and one character which is not a letter (special char, numbers…)
+ */
 public class Challenge3_14 {
 
     public static void main(String[] args) {

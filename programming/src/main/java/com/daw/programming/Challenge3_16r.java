@@ -2,6 +2,18 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
+/*
+r.       [ADVANCED] “Odd” number triangle.
+
+Ask to the user for a number of rows.
+
+Write a program to show a triangle like the following (this is if the user enters the number 5):
+1
+3 1
+5 3 1
+7 5 3 1
+9 7 5 3 1
+ */
 public class Challenge3_16r {
 
     public static void main(String[] args) {

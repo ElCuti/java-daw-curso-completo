@@ -2,6 +2,14 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
+/*
+s.      [ADVANCED] Counting numbers in book sections.
+Create a program that allows to the user to enter titles of books.
+The program should finish when the user enters the string “*” (asterisk).
+Each time that the user enters a slash “/” we consider that a section has finished and the program 
+have to tell how many number digits (from 0 to 9) appeared in the titles of the books on this section.
+Finally the program has to tell how many sections it has processed.
+ */
 public class Challenge3_16s {
 
     public static void main(String[] args) {

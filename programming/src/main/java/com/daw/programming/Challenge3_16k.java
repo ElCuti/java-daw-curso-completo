@@ -2,6 +2,14 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
+/*
+k.      Asking for a password.
+Store in a variable a secret password.
+Ask to the user for the password and print if the password entered is right or not.
+Repeat the program until de password is ok.
+Modify the program to not having into account lowercase and uppercase characters.
+Example of execution (if the password is “myCatHarry”):
+ */
 public class Challenge3_16k {
 
     public static void main(String[] args) {

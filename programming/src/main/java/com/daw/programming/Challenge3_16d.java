@@ -2,6 +2,12 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
+/*
+d.     Voting in the elections.
+There are elections to the president of the country. There are 3 political parties: A “the cool party”, B “the angry party” and C “the supercrazy party”.
+To vote, the user should enter (A, B or C) and we have to print “You have voted for the XXXX party” (where XXXX is the name of the corresponding party).
+If the user enter an invalid option, print “invalid option” and ask again to the user for the vote.
+ */
 public class Challenge3_16d {
 
     public static void main(String[] args) {

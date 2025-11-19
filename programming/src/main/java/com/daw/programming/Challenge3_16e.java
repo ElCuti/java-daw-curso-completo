@@ -2,6 +2,12 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
+/*
+e.      [BEGINNER] Is it a vowel.
+Ask to the user for a String. If the String is a vowel (a, e, i, o, u) show the message “It is a vowel”, 
+otherwise show “It is NOT a vowel”.
+If the user enters more than one character, show an error informing that this is not possible.
+ */
 public class Challenge3_16e {
 
     public static void main(String[] args) {

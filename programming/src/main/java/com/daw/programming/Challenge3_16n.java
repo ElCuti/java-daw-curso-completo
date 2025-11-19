@@ -2,6 +2,12 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
+/*
+n.     [BEGINNER] Number of times that a letter is in a sentence.
+Ask to the user for a sentence (phrase).
+Ask to the user for a letter.
+Tell the number of times that this letter is in the sentence.
+ */
 public class Challenge3_16n {
 
     public static void main(String[] args) {

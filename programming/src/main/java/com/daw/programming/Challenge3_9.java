@@ -1,14 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.daw.programming;
 
 import java.util.Scanner;
 
 /**
+ * Create a class named "Challenge3_9.java".
  *
- * @author Alumnado
+ * By using the “while” statement, make a program which stores in a variable a
+ * secret number between 1 and 10. The program will ask to the user a number to
+ * guess the secret number. Each time the user enters a number, the program have
+ * to indicate if the number entered by the user is smaller than, equal to ,
+ * greater than the secret number or if the user has guessed the right number
+ * (in this case, the program should finish).
  */
 public class Challenge3_9 {
 

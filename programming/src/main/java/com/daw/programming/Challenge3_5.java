@@ -1,13 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.daw.programming;
 
 /**
+ * Create a class named "Challenge3_5.java".
  *
- * @author Alumnado
+ * a) By using the “for” statement, write the 7 times table (multiplication
+ * table).
+ *
+ * b) Modify the previous exercise to write all times tables from 1 to 10.
  */
+
 public class Challenge3_5 {
 
     public static void main(String[] args) {

@@ -2,6 +2,12 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
+/*
+h.     Changing to uppercase a vowel in a sentence.
+Ask for a sentence (phrase) to the user.
+Ask for a vowel to the user (store it as an String).
+Show the same sentence but with the vowel entered by the user in uppercase.
+ */
 public class Challenge3_16h {
 
     public static void main(String[] args) {

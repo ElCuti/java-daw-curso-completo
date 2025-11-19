@@ -2,6 +2,10 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
+/*
+m.    Is it a prime number?
+Ask for a number to the user and tell if it is a “prime number” or not.
+ */
 public class Challenge3_16m {
 
     public static void main(String[] args) {

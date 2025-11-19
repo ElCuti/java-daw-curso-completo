@@ -2,6 +2,11 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
+/*
+i.       [BEGINNER] Number of euros and number of decimals.
+Write a program which store in a String the price in euros with 2 decimals entered by the user.
+Print in screen the number of euros and the number of decimals.
+ */
 public class Challenge3_16i {
 
     public static void main(String[] args) {

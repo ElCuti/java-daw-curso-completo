@@ -2,6 +2,11 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
+/*
+p.     Sum positive numbers.
+Read int numbers by keyboard, until the user enters the number 0.
+Sum all the positive numbers and show the result
+ */
 public class Challenge3_16p {
 
     public static void main(String[] args) {

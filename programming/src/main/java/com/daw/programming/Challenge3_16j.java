@@ -2,6 +2,11 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
+/*
+j.       [ADVANCED] Shopping list.
+The user have to introduce by keyboard the list of products in a shopping list separated by commas.
+Show each product in a different line.
+ */
 public class Challenge3_16j {
 
     public static void main(String[] args) {

@@ -1,5 +1,65 @@
 package com.daw.programming;
+/**
+Create a class named "Challenge3_8.java".
 
+a) By using the keyboard, ask for a number to the user. Paint on screen a triangle with this number of rows:
+
+Number of rows:
+7
+
+#
+##
+###
+####
+#####
+######
+#######
+
+b) Invert the triangle:
+
+Number of rows:
+7
+
+#######
+######
+#####
+####
+###
+##
+#
+
+c) (OPTIONAL-ADVANCED) Convert the triangle into a pyramid.
+
+Number of rows:
+7
+
+      #
+     ###
+    #####
+   #######
+  #########
+ ###########
+#############
+
+D) (OPTIONAL-ADVANCED) Rotate the pyramid (notice that you have to ask for columns instead rows now).
+
+Number of columns:
+7
+
+#
+##
+###
+####
+#####
+######
+#######
+######
+#####
+####
+###
+##
+#
+ */
 public class Challenge3_8 {
 
     public static void main(String[] args) {

@@ -2,6 +2,12 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
+/*
+*t[ADVANCED] Caesar encryption.
+*Encrypt a message by using “Caesar encryption”. It consist in move each letter 1 position. 
+For example, the A would be B, the B would be C, and so on. The Z would be A.
+*Modify it to ask the user by the number of letters to move (with 2, the A would be C now).
+ */
 public class Challenge3_16t {
 
     public static void main(String[] args) {

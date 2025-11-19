@@ -2,6 +2,11 @@ package com.daw.programming;
 
 import java.util.Scanner;
 
+/*
+f.       Writing the name of a person with lowercase, lowercase and initials in upper.
+Ask for the full name of a person.
+Write the name in lowercase, in uppercase and with the initial letter of each word in Uppercase.
+ */
 public class Challenge3_16f {
 
     public static void main(String[] args) {
