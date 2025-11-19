@@ -25,12 +25,12 @@ public class Challenge4_4 {
     }
 
     public static int userValue() {
-        int precio = 0;
+        int valor = 0;
         Scanner keyboard = new Scanner(System.in);
         do {
-            precio = keyboard.nextInt();
-        } while (precio < 0);
-        return precio;
+            valor = keyboard.nextInt();
+        } while (valor < 0);
+        return valor;
     }
 
     public static int rectangleArea(int value1, int value2) {
