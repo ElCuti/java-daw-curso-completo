@@ -13,8 +13,8 @@ import static com.daw.programming.Challenge5_3.elementos;
 public class Challenge5_6 {
 
     public static void main(String[] args) {
-        int number[] = {1, 2, 3, 4, 5};
-        int number2[] = new int[5];
+        int number[] = {1, 2, 3, 4, 5, 9};
+        int number2[] = new int[number.length];
         int count2 = 0;
         for (int count = number.length - 1; count != -1; count--) {
             number2[count2] = number[count];

@@ -18,8 +18,8 @@ package com.daw.programming;
 public class Challenge5_7 {
 
     public static void main(String[] args) {
-        int higher = -20000;
-        int lower = 20000;
+        int higher = Integer.MIN_VALUE;
+        int lower = Integer.MAX_VALUE;
         int number[] = {-17 ,-1 ,0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         for (int num : number) {
             if (num > higher) {
