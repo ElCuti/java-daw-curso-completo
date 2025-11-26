@@ -13,13 +13,13 @@ package com.daw.programming;
 public class Challenge5_3 {
 
     public static void main(String[] args) {
-        String cars[] = {"Ford", "Volvo", "Peugeot", "Seat", "Bmw", "Audi", "Mini"};
+        int cars[] = {1, 2, 3, 4 ,5 ,6};
         elementos(cars);
     }
 
-    public static void elementos(String cars[]) {
-        for (int count = 0; count != cars.length; count++) {
-            System.out.println(cars[count]);
+    public static void elementos(int elements[]) {
+        for (int count = 0; count != elements.length; count++) {
+            System.out.println(elements[count]);
         }
     }
 }
