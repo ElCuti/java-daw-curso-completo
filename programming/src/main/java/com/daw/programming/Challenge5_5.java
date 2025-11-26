@@ -37,9 +37,10 @@ public class Challenge5_5 {
         for (int num : listNum) {
             if (num == userNum) {
                 position = count;
+                return position;
             }
             count++;
         }
-        return position;
+     return position;   
     }
 }
