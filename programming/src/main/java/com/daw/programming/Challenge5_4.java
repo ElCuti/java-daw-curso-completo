@@ -19,9 +19,13 @@ package com.daw.programming;
 public class Challenge5_4 {
 
     public static void main(String[] args) {
-     String day[] = {" ","Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"};
-            int numero = (int) (Math.random() * 7)+1;
-            System.out.println("Hoy es el dia "+numero+" de la semana, que corresponde a "+day[numero]);
-        }
+        int numero = (int) (Math.random() * 7) + 1;
+        dayInLetter(numero);
     }
 
+    public static void dayInLetter(int numero) {
+        String day[] = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"};
+        String dayInLetter = day[numero - 1];
+        System.out.println("Hoy es el dia " + numero + " de la semana, que corresponde a " + dayInLetter);
+    }
+}
