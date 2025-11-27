@@ -22,7 +22,7 @@ public class Challenge5_9 {
 
     public static void main(String[] args) {
         boolean bulkiest = false;
-        int number[] = {1, 8, 5, 9, 4, 7, 2};
+        int number[] = {1, 10, 8, 5, 9, 4, 7, 2};
         for (int count = 0; count != number.length; count++) {
             for (int num = count + 1; num != number.length; num++) {
                 if (number[count] > number[num]) {
