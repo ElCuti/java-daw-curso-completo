@@ -18,9 +18,10 @@ package com.daw.programming;
 public class Challenge5_8 {
 
     public static void main(String[] args) {
-        int coincidence = 0;
+        
         int number[] = {1, 4, 3, 5, 7, 3, 9, 4, 1, 1, 1 ,2, 1, 1};
         for (int count = 0; count != number.length; count++) {
+            int coincidence = 0;
             for (int num = count+1; num != number.length; num++) {
                 if (number[count] == number[num]) {
                     coincidence++;
@@ -29,7 +30,6 @@ public class Challenge5_8 {
             if (coincidence == 1) {
                 System.out.println("The number " + number[count] + " is duplicated");
             }
-            coincidence = 0;
         }
     }
 }
