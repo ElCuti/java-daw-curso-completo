@@ -1,15 +1,34 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.daw.programming;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 /**
+ * Create an ArrayList of Strings to store programming languages.
  *
- * @author Alumnado
+ * Add the following programming languages:
+ *
+ * Java PHP Python C++ C# Kotlin
+ *
+ * Show the elements contained in the ArrayList.
+ *
+ * Order the elements in the ArrayList.
+ *
+ * Show the elements contained in the ArrayList.
+ *
+ * b)
+ *
+ * Make Java to be the first one.
+ *
+ * Show the elements contained in the ArrayList.
+ *
+ * c)
+ *
+ * Tell what is the position of Kotlin.
+ *
+ * d)
+ *
+ * Display the languages containing the letter “o”.
  */
 public class Challenge5_13 {
 
@@ -32,19 +51,10 @@ public class Challenge5_13 {
 
         System.out.println("Ejercicio D: Lenguajes con una o en su nombre: ");
         for (String language : languages) {
-            int positionO = -1;
-            int coincidence = 0;
-            for (int count = 0; count != language.length(); count++) {
-                positionO = language.indexOf("o");
-                if (positionO != -1) {
-                    coincidence++;
-                }
-            }
-            if (coincidence != 0) {
+            int positionO = language.indexOf("o");
+            if (positionO != -1) {
                 System.out.println("- " + language);
             }
-            coincidence = 0;
-
         }
     }
 }
