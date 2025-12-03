@@ -15,14 +15,16 @@ public class Challenge5_15 {
     public static void main(String[] args) {
         int numbers[] = {1, 4, 3, 5, 7, 3, 9, 4, 1, 1, 1, 2, 1, 1};
         HashSet<Integer> numbersHash = new HashSet();
+        HashSet<Integer> numerosMencionados = new HashSet();
 
         for (int count = 0; count != numbers.length; count++) {
-           if (numbersHash.contains(numbers[count])){
-               System.out.println("El numero "+numbers[count]+" esta duplicado");
-           }
-            
+            if (numbersHash.contains(numbers[count]) && !numerosMencionados.contains(numbers[count])) {
+                System.out.println("El numero " + numbers[count] + " esta duplicado");
+                numerosMencionados.add(numbers[count]);
+            }
+
             numbersHash.add(numbers[count]);
-            
+
         }
         System.out.println(numbersHash);
     }
