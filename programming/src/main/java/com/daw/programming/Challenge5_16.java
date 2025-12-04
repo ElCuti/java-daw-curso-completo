@@ -4,7 +4,6 @@
  */
 package com.daw.programming;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 
@@ -21,7 +20,7 @@ public class Challenge5_16 {
         int nPremiados = 3;
         Random generador = new Random();
         HashSet<Integer> premiados = new HashSet();
-        for (int count = 0; premiados.size() != nPremiados; count++) {
+        while (premiados.size() != nPremiados) {
             int aleatorio = generador.nextInt(limit)+1;
             premiados.add(aleatorio);
         }

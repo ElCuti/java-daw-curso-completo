@@ -26,6 +26,5 @@ public class Challenge5_15 {
             numbersHash.add(numbers[count]);
 
         }
-        System.out.println(numbersHash);
     }
 }
