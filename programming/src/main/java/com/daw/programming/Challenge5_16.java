@@ -21,12 +21,8 @@ public class Challenge5_16 {
         int nPremiados = 3;
         Random generador = new Random();
         HashSet<Integer> premiados = new HashSet();
-        ArrayList<Integer> numbers = new ArrayList();
-        for (int count = 0; count != limit; count++) {
-            numbers.add(count);
-        }
         for (int count = 0; premiados.size() != nPremiados; count++) {
-            int aleatorio = generador.nextInt(11);
+            int aleatorio = generador.nextInt(limit)+1;
             premiados.add(aleatorio);
         }
         System.out.println("Los premiados son: " + premiados);
