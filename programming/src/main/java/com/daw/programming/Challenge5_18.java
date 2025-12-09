@@ -1,17 +1,25 @@
-
 package com.daw.programming;
 
+import java.util.HashMap;
+import java.util.HashSet;
+
 /**
- *
- * @author Alumnado
+ * Take the exercise 5_15 and modify it to count how many times is duplicated
+ * each element.
  */
 public class Challenge5_18 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        int numbers[] = {1, 4, 3, 5, 7, 3, 9, 4, 1, 1, 1, 2, 1, 1};
+        HashMap<Integer, Integer> numberCoincidence = new HashMap(); 
+        for (int count = 0; count != numbers.length; count++) {
+            int coincidences = 0;
+           if (numberCoincidence.containsKey(numbers[count])){
+               coincidences = numberCoincidence.get(numbers[count]);
+               coincidences++;  
+           }
+           numberCoincidence.put(numbers[count], coincidences);
+        }
+        System.out.println(numberCoincidence);
     }
-    
 }
