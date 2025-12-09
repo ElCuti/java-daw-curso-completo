@@ -16,12 +16,12 @@ import java.util.Random;
 public class Challenge5_16 {
 
     public static void main(String[] args) {
-        int limit = 10;
-        int nPremiados = 3;
+        int LIMIT = 10;
+        int NPREMIADOS = 3;
         Random generador = new Random();
         HashSet<Integer> premiados = new HashSet();
-        while (premiados.size() != nPremiados) {
-            int aleatorio = generador.nextInt(limit)+1;
+        while (premiados.size() != NPREMIADOS) {
+            int aleatorio = generador.nextInt(LIMIT)+1;
             premiados.add(aleatorio);
         }
         System.out.println("Los premiados son: " + premiados);
