@@ -1,7 +1,6 @@
 package com.daw.programming;
 
 import java.util.HashMap;
-import java.util.HashSet;
 
 /**
  * Take the exercise 5_15 and modify it to count how many times is duplicated
