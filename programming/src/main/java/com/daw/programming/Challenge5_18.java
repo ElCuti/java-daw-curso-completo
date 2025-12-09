@@ -11,15 +11,26 @@ public class Challenge5_18 {
 
     public static void main(String[] args) {
         int numbers[] = {1, 4, 3, 5, 7, 3, 9, 4, 1, 1, 1, 2, 1, 1};
-        HashMap<Integer, Integer> numberCoincidence = new HashMap(); 
+        HashMap<Integer, Integer> numberCoincidence = new HashMap();
         for (int count = 0; count != numbers.length; count++) {
             int coincidences = 0;
-           if (numberCoincidence.containsKey(numbers[count])){
-               coincidences = numberCoincidence.get(numbers[count]);
-               coincidences++;  
-           }
-           numberCoincidence.put(numbers[count], coincidences);
+            if (numberCoincidence.containsKey(numbers[count])) {
+                coincidences = numberCoincidence.get(numbers[count]);
+                coincidences++;
+            }
+            numberCoincidence.put(numbers[count], coincidences);
         }
-        System.out.println(numberCoincidence);
+        for (int number : numberCoincidence.keySet()) {
+            int times = numberCoincidence.get(number);
+            if (times != 0) {
+                String repeticion = "repeticiones";
+                if (times == 1) {
+                    repeticion = "repeticion";
+                }
+                System.out.println("El numero " + number + " tiene " + times + " " + repeticion);
+            }
+        }
+
     }
+
 }
