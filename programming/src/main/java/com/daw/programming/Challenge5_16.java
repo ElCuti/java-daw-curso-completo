@@ -16,14 +16,18 @@ import java.util.Random;
 public class Challenge5_16 {
 
     public static void main(String[] args) {
-        int LIMIT = 10;
-        int NPREMIADOS = 3;
+        int LIMIT = 300;
+        int NPREMIADOS = 5;
+        int Premio = 0;
         Random generador = new Random();
         HashSet<Integer> premiados = new HashSet();
         while (premiados.size() != NPREMIADOS) {
-            int aleatorio = generador.nextInt(LIMIT)+1;
+            int aleatorio = generador.nextInt(LIMIT) + 1;
             premiados.add(aleatorio);
         }
-        System.out.println("Los premiados son: " + premiados);
+        for (int premiado : premiados) {
+            Premio++;
+            System.out.println("El premio " + Premio + " es para el numero " + premiado);
+        }
     }
 }
