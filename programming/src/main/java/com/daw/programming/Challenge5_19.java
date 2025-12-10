@@ -1,5 +1,6 @@
 package com.daw.programming;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -14,6 +15,7 @@ import java.util.HashMap;
 public class Challenge5_19 {
 
     public static void main(String[] args) {
+        /*A
         HashMap<String, String> teams = new HashMap();
         HashMap<String, Integer> colores = new HashMap();
         teams.put("Atletico de Madrid", "rojiblancos");
@@ -29,8 +31,10 @@ public class Challenge5_19 {
                 coincidences = colores.get(color);
                 coincidences++;
             }
+        
             colores.put(color, coincidences);
         }
+        
         for (String equipo : colores.keySet()) {
             int times = colores.get(equipo);
             String repeticion = "equipos";
@@ -38,7 +42,25 @@ public class Challenge5_19 {
                 repeticion = "equipo";
             }
             System.out.println("El color " + equipo + " tiene " + times + " " + repeticion);
-
+        }*/
+        //B
+        HashMap<String, String> teams = new HashMap();
+        HashMap<String, ArrayList<String>> coloresEquipo = new HashMap();
+        teams.put("Atletico de Madrid", "rojiblancos");
+        teams.put("Real Madrid", "blancos");
+        teams.put("Barcelona", "blaugranas");
+        teams.put("Atlhetic", "rojiblancos");
+        teams.put("Oviedo", "azules");
+        teams.put("Almeria", "rojiblancos");
+        for (String team : teams.keySet()) {
+            ArrayList<String> equiposColor = new ArrayList();
+            String color = teams.get(team);
+            if (coloresEquipo.keySet().contains(color)) {
+                equiposColor = coloresEquipo.get(color);
+            }
+            equiposColor.add(team);
+            coloresEquipo.put(color, equiposColor);
         }
+        System.out.println(coloresEquipo);
     }
 }
