@@ -90,10 +90,8 @@ public class Challenge5_19 {
         teams.put("Villarreal B", "Amarillos");
         teams.put("Alcorcon", "Amarillos");
         for (String team : teams.keySet()) {
-            // You have only to create the array in the event that it is necessary. I mean, create the array has a cost, so if it is not necessary you dont have to create it
-
             String color = teams.get(team);
-            if (coloresEquipo.containsKey(color)) { // Simplify this
+            if (coloresEquipo.containsKey(color)) {
                 equiposColor = coloresEquipo.get(color);
             } else {
                 equiposColor = new ArrayList();
