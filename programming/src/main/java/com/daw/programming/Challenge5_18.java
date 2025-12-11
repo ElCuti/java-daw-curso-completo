@@ -19,6 +19,7 @@ public class Challenge5_18 {
             }
             numberCoincidence.put(numbers[count], coincidences);
         }
+        System.out.println(numberCoincidence);
         for (int number : numberCoincidence.keySet()) {
             int times = numberCoincidence.get(number);
             if (times != 0) {
