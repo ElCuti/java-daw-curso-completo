@@ -16,10 +16,10 @@ public class Challenge5_20e {
     public static void main(String[] args) {
         float average = 0;
         float count = 0;
-        float[] numbers = {1, 5, 10, 15, 20, 15, 1, 20};
+        float[] numbers = {1, 5, 8, 10, 12, 15, 20, 15, 1, 20};
         ArrayList<Float> repeatNumbers = new ArrayList<Float>();
+        ArrayList<Float> nearNumbers = new ArrayList<Float>();
 
-        /* Primera parte */
         for (float number : numbers) {
             if (!repeatNumbers.contains(number)) {
                 average += number;
@@ -28,8 +28,14 @@ public class Challenge5_20e {
             }
         }
         average /= count;
-        System.out.println("La media de la lista es: " + average);
-        /* Segunda parte */
+        System.out.println("La media de la lista es sin repetidos es: " + average);
+        for (float number : numbers) {
+            if (number < average + 3 && number > average - 3) {
+                nearNumbers.add(number);
+            }
+        }
+        System.out.println(nearNumbers);
+
     }
 
 }
