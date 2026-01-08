@@ -40,8 +40,14 @@ public class Challenge5_20c {
     }
 
     public static void main(String[] args) {
-        for (int count = 7; count != 0; count--) {
-            repeatCharacter("*", count);
+        int limit = 1;
+        for (int count = 16; count != 0; count /= 2) {
+            for (int count2 = 0; count2 < limit; count2++) {
+                repeatCharacter(" ", count);
+                repeatCharacter("*", count);
+
+            }
+            limit *= 2;
             System.out.println();
         }
     }
