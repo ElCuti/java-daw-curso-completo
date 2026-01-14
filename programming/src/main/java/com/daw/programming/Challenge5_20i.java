@@ -15,12 +15,8 @@ public class Challenge5_20i {
         for (int number1 : numbers1) {
             int numberToAdd = 0;
             boolean changeMin = false;
-            int count = 0;
+            lowerNumber = highestNumbers.get(0);
             for (int highest : highestNumbers) {
-                count++;
-                if (count == 1) {
-                    lowerNumber = highest;
-                }
                 if (number1 > highest) {
                     numberToAdd = number1;
                     if (highest <= lowerNumber) {
