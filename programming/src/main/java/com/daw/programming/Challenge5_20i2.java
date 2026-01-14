@@ -6,6 +6,7 @@ Get the 3 greatest numbers of the 2 ArrayLists together.*/
 package com.daw.programming;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Challenge5_20i2 {
 
@@ -28,29 +29,16 @@ public class Challenge5_20i2 {
     }
 
     public static void main(String[] args) {
+        Random random = new Random();
         ArrayList<Integer> numbers1 = new ArrayList();
         ArrayList<Integer> numbers2 = new ArrayList();
         ArrayList<Integer> highestNumbers = new ArrayList();
-        numbers1.add(1);
-        numbers1.add(5);
-        numbers1.add(31);
-        numbers1.add(26);
-        numbers1.add(20);
-        numbers1.add(25);
-        numbers1.add(27);
-        numbers2.add(2);
-        numbers2.add(4);
-        numbers2.add(6);
-        numbers2.add(8);
-        numbers2.add(10);
-        numbers2.add(12);
-        numbers2.add(14);
-        numbers2.add(16);
-        numbers2.add(18);
-        numbers2.add(20);
-        numbers2.add(22);
-        numbers2.add(60);
-        numbers2.add(26);
+        for(int i = 0; i != 1000; i++){
+            numbers1.add(random.nextInt(15000)); 
+        }
+        for(int i = 0; i != 1000; i++){
+            numbers2.add(random.nextInt(15000)); 
+        }
         highestNumbers.add(0);
         highestNumbers.add(0);
         highestNumbers.add(0);
