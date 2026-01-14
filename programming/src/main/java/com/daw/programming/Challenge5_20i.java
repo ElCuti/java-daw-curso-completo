@@ -16,11 +16,11 @@ public class Challenge5_20i {
         int lowerNumber = 0;
         numbers1.add(1);
         numbers1.add(5);
-        numbers1.add(10);
-        numbers1.add(15);
+        numbers1.add(31);
+        numbers1.add(26);
         numbers1.add(20);
         numbers1.add(25);
-        numbers1.add(30);
+        numbers1.add(26);
         numbers2.add(2);
         numbers2.add(4);
         numbers2.add(6);
@@ -41,6 +41,21 @@ public class Challenge5_20i {
             int numberToAdd = 0;
             boolean changeMin = false;
             int count = 0;
+            /*
+            if (number1>highestNumbers.get(2)) {
+                highestNumbers.set(0, highestNumbers.get(1));
+                highestNumbers.set(1, highestNumbers.get(2));
+                highestNumbers.set(2, number1);
+                
+            }
+            else if (number1>highestNumbers.get(1)) {
+                highestNumbers.set(0, highestNumbers.get(1));
+                highestNumbers.set(1, number1);
+                
+            }
+            else if (number1>highestNumbers.get(0)) {
+                highestNumbers.set(0, number1);
+            } */
             for (int highest : highestNumbers) {
                 count++;
                 if (count == 1) {
@@ -55,11 +70,13 @@ public class Challenge5_20i {
                 }
             }
             if (changeMin) {
-                highestNumbers.remove(lowerNumber);
+                int position = highestNumbers.indexOf(lowerNumber);
+                highestNumbers.remove(position);
                 highestNumbers.add(numberToAdd);
 
             }
         }
+
         System.out.println(highestNumbers);
 
     }
