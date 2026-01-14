@@ -10,6 +10,7 @@ Calculate the average again without the numbers with a distance of more than 3 p
 package com.daw.programming;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Challenge5_20e {
 
@@ -17,24 +18,23 @@ public class Challenge5_20e {
         float average = 0;
         float count = 0;
         float[] numbers = {1, 5, 8, 10, 12, 15, 20, 15, 1, 20};
-        ArrayList<Float> repeatNumbers = new ArrayList<Float>();
+        HashSet<Float> repeatNumbers = new HashSet();
         ArrayList<Float> nearNumbers = new ArrayList<Float>();
 
         for (float number : numbers) {
-            if (!repeatNumbers.contains(number)) {
-                average += number;
-                count++;
-                repeatNumbers.add(number);
-            }
+            repeatNumbers.add(number);
         }
-        average /= count;
-        System.out.println("La media de la lista es sin repetidos es: " + average);
-        for (float number : numbers) {
+        for (float number : repeatNumbers) {
+            average += number;
+        }
+        average /= repeatNumbers.size();
+        System.out.println("La media de la lista sin repetidos es: " + average);
+        for (float number : repeatNumbers) {
             if (number < average + 3 && number > average - 3) {
                 nearNumbers.add(number);
             }
         }
-        System.out.println(nearNumbers);
+        System.out.println("Los numeros que estan a un rango de 3 por arriba y por abajo son estos: " + nearNumbers);
 
     }
 
