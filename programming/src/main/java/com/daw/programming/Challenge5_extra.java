@@ -11,12 +11,10 @@ public class Challenge5_extra {
 
     public static void main(String[] args) {
         Random random = new Random();
-        int[] numbers = new int[10];
         int[] orderNumbers = new int[10];
         for (int i = 0; i < 10; i++) {
             int numberToAdd = random.nextInt(30);
             if (numberToAdd % 2 == 0) {
-                numbers[i] = numberToAdd;
                 orderNumbers[9 - i] = numberToAdd;
 
             }
