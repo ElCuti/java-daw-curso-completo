@@ -45,10 +45,10 @@ public class Time {
     public static Time segConverse(int seg) {
         int myhours = 0;
         int mymin = 0;
-        for (; seg - 3600 > 0; myhours++) {
+        for (; seg - 3600 >= 0; myhours++) {
             seg -= 3600;
         }
-        for (; seg - 60 > 0; mymin++) {
+        for (; seg - 60 >= 0; mymin++) {
             seg -= 60;
         }
         Time hora = new Time(myhours, mymin, seg);
@@ -56,8 +56,10 @@ public class Time {
     }
 
     public static void main(String[] args) {
-        Time hora1 = segConverse(8000);
+        Time hora1 = segConverse(3680);
+        Time hora2 = segConverse(3600);
         System.out.println(hora1);
+        System.out.println(hora2);
     }
 
 }
