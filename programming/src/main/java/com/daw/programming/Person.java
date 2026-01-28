@@ -7,11 +7,13 @@ public class Person {
     String name;
     int age;
     int altura;
+    static int numberOfPersons = 0;
 
     public Person(String newName, int newAge, int newAltura) {
         name = newName;
         age = newAge;
         altura = newAltura;
+        numberOfPersons++;
     }
 
     public String toString() {
@@ -29,19 +31,24 @@ public class Person {
 
     public void olderThanMe(Person persona2) {
         if (age > persona2.age) {
-            System.out.println(name + " es mas mayor que " + persona2.name);
+            System.out.println(name + " es mayor que " + persona2.name);
         } else if (age < persona2.age) {
-            System.out.println(persona2.name + " es mas mayor que " + name);
+            System.out.println(persona2.name + " es mayor que " + name);
         } else {
             System.out.println("Tanto " + name + ", como " + persona2.name + " tienen la misma edad");
         }
+    }
+
+    public static void printNumberOfPersons() {
+        System.out.println("Number of persons is: " + numberOfPersons);
     }
 
     public static void main(String[] args) {
         Person person1 = new Person("Juan", 25, 177);
         Person person2 = new Person("Luisa", 29, 159);
         Person person3 = new Person("Ana", 33, 169);
-/*
+        printNumberOfPersons();
+        /*
         System.out.println(person1.name + ", " + person1.age);
         System.out.println(person2.name + ", " + person2.age);
         System.out.println(person3.name + ", " + person3.age);
@@ -52,7 +59,7 @@ public class Person {
         } else {
             System.out.println(person1.name + " no puede ser Guardia Civil");
         }
-*/
+         */
         person3.olderThanMe(person2);
     }
 
