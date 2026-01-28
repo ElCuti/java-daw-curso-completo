@@ -8,12 +8,21 @@ public class Person {
     int age;
     int altura;
     static int numberOfPersons = 0;
+    static Person presidente;
 
     public Person(String newName, int newAge, int newAltura) {
         name = newName;
         age = newAge;
         altura = newAltura;
         numberOfPersons++;
+    }
+
+    public static String getPresidente() {
+        return presidente.name;
+    }
+
+    public static void setPresidente(Person president) {
+        presidente = president;
     }
 
     public String toString() {
@@ -47,7 +56,7 @@ public class Person {
         Person person1 = new Person("Juan", 25, 177);
         Person person2 = new Person("Luisa", 29, 159);
         Person person3 = new Person("Ana", 33, 169);
-        printNumberOfPersons();
+
         /*
         System.out.println(person1.name + ", " + person1.age);
         System.out.println(person2.name + ", " + person2.age);
@@ -59,8 +68,11 @@ public class Person {
         } else {
             System.out.println(person1.name + " no puede ser Guardia Civil");
         }
-         */
+         
         person3.olderThanMe(person2);
+        printNumberOfPersons();*/
+        setPresidente(person2);
+        System.out.println("El presidente ahora es " + getPresidente());
     }
 
 }
