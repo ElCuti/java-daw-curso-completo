@@ -13,16 +13,20 @@ public class Challenge6_7 {
 
     public static void main(String[] args) {
         //A
-        System.out.println(Math.round(12.8765));
+        int round = (int) Math.round(12.8765);
+        System.out.println(Math.round(round));
         //B
-        System.out.println(Math.abs(-13));
+        int absolute = Math.abs(-13);
+        System.out.println(absolute);
         //C
-        System.out.println(Math.sqrt(48));
+        double sqrt = Math.sqrt(48);
+        System.out.println(sqrt);
         //D
-        System.out.println(Math.pow(2, 10));
+        int power = (int) Math.pow(2, 10);
+        System.out.println(power);
         //E
         String test1 = "24";
-        int test2= Integer.parseInt(test1);
+        int test2 = Integer.parseInt(test1);
         System.out.println(test2);
     }
 
