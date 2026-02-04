@@ -5,10 +5,10 @@ package com.daw.programming;
 public class Person {
 
     String name;
-    int age;
+    private int age;
     int altura;
-    static int numberOfPersons = 0;
-    static Person presidente;
+    private static int numberOfPersons = 0;
+    private static Person presidente;
 
     public Person(String newName, int newAge, int newAltura) {
         name = newName;
@@ -17,6 +17,18 @@ public class Person {
         numberOfPersons++;
     }
 
+    public static int getNumberOfPersons() {
+        return numberOfPersons;
+    }
+    
+     public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+    
     public static String getPresidente() {
         if (presidente != null) {
             return presidente.name;
@@ -79,6 +91,11 @@ public class Person {
         setPresidente(person2);
         System.out.println("El presidente ahora es " + getPresidente());
         System.out.println(getPresidente());
+        
+        int personasTotal = getNumberOfPersons();
+        System.out.println(personasTotal);
+        int edad = person2.getAge();
+        System.out.println(edad);
     }
 
 }
