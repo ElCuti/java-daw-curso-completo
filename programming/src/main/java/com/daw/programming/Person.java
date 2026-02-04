@@ -18,7 +18,11 @@ public class Person {
     }
 
     public static String getPresidente() {
-        return presidente.name;
+        if (presidente != null) {
+            return presidente.name;
+        } else {
+            return "No hay presidente";
+        }
     }
 
     public static void setPresidente(Person president) {
@@ -71,8 +75,10 @@ public class Person {
          
         person3.olderThanMe(person2);
         printNumberOfPersons();*/
+        System.out.println(getPresidente());
         setPresidente(person2);
         System.out.println("El presidente ahora es " + getPresidente());
+        System.out.println(getPresidente());
     }
 
 }
