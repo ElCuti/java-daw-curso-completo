@@ -11,10 +11,10 @@ public class Person {
     private static int numberOfPersons = 0;
     private static Person presidente;
 
-    public Person(String newName, int newAge, int newAltura) {
-        name = newName;
-        age = newAge;
-        altura = newAltura;
+    public Person(String name, int age, int altura) {
+        this.name = name;
+        this.age = age;
+        this.altura = altura;
         numberOfPersons++;
     }
 
