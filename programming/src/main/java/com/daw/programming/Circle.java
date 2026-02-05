@@ -8,8 +8,8 @@ public class Circle {
     private float radius;
     private static int numberOfCicles = 0;
 
-    public Circle(float circleRadius) {
-        radius = circleRadius;
+    public Circle(float radius) {
+        this.radius = radius;
         numberOfCicles++;
     }
 
