@@ -5,8 +5,8 @@ package com.daw.programming;
 
 public class Circle {
 
-    float radius;
-    static int numberOfCicles = 0;
+    private float radius;
+    private static int numberOfCicles = 0;
 
     public Circle(float circleRadius) {
         radius = circleRadius;
@@ -14,15 +14,27 @@ public class Circle {
     }
 
     public static void printNumberOfCircles() {
-        System.out.println("Number of circles is: " + numberOfCicles);
+        System.out.println("Number of circles is: " + getNumberOfCicles());
     }
 
     public double Perimeter() {
-        return radius * Math.PI * 2;
+        return getRadius() * Math.PI * 2;
     }
 
     public double Area() {
-        return Math.PI * Math.pow(radius, 2);
+        return Math.PI * Math.pow(getRadius(), 2);
+    }
+
+    public static int getNumberOfCicles() {
+        return numberOfCicles;
+    }
+
+    public float getRadius() {
+        return radius;
+    }
+
+    public void setRadius(float radius) {
+        this.radius = radius;
     }
 
     public static void main(String[] args) {
