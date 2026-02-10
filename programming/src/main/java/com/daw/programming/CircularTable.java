@@ -9,24 +9,24 @@ package com.daw.programming;
 
 import static java.lang.Math.ceil;
 
-public class Circular_Table extends Circle {
+public class CircularTable extends Circle {
 
     private String color;
 
-    public Circular_Table(float radius, String color) {
+    public CircularTable(float radius, String color) {
         super(radius);
         this.color = color;
     }
 
-    public static double Paint(double squareMetre) {
+    public double paint() {
         // Por cada 1 metro cuadrado necesitamos 1,5L
+        double squareMetre = area();
         return squareMetre * 1.5;
     }
 
     public static void main(String[] args) {
-        Circular_Table table1 = new Circular_Table(3, "Verde");
-        double squareMetre = table1.Area();
-        System.out.println("Para pintar esa mesa necesitariamos " + ceil(Paint(squareMetre)) + " L de pintura");
+        CircularTable table1 = new CircularTable(3, "Verde");
+        System.out.println("Para pintar esa mesa necesitariamos " + ceil(table1.paint()) + " L de pintura de color "+table1.color);
 
     }
 

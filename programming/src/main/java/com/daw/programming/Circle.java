@@ -17,11 +17,11 @@ public class Circle {
         System.out.println("Number of circles is: " + getNumberOfCicles());
     }
 
-    public double Perimeter() {
+    public double perimeter() {
         return getRadius() * Math.PI * 2;
     }
 
-    public double Area() {
+    public double area() {
         return Math.PI * Math.pow(getRadius(), 2);
     }
 
@@ -43,11 +43,11 @@ public class Circle {
         Circle circle2 = new Circle(4);
         printNumberOfCircles();
         System.out.println("-- CIRCLE 1 --");
-        System.out.println(circle1.Perimeter());
-        System.out.println(circle1.Area());
+        System.out.println(circle1.perimeter());
+        System.out.println(circle1.area());
         System.out.println("-- CIRCLE 2 --");
-        System.out.println(circle2.Perimeter());
-        System.out.println(circle2.Area());
+        System.out.println(circle2.perimeter());
+        System.out.println(circle2.area());
 
     }
 
