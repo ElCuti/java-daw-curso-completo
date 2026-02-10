@@ -7,6 +7,8 @@ In Circle, change the method to calculate the area, in a way that it returns the
  */
 package com.daw.programming;
 
+import static java.lang.Math.ceil;
+
 public class Circular_Table extends Circle {
 
     private String color;
@@ -16,13 +18,16 @@ public class Circular_Table extends Circle {
         this.color = color;
     }
 
-    public float Paint() {
+    public static double Paint(double squareMetre) {
         // Por cada 1 metro cuadrado necesitamos 1,5L
-        float area = table1.Area();
+        return squareMetre * 1.5;
     }
 
     public static void main(String[] args) {
         Circular_Table table1 = new Circular_Table(3, "Verde");
+        double squareMetre = table1.Area();
+        System.out.println("Para pintar esa mesa necesitariamos " + ceil(Paint(squareMetre)) + " L de pintura");
+
     }
 
 }
