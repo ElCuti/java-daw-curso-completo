@@ -1,7 +1,10 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+ Use the examples in slides 23 and 24 called BankAccount and LimitedBankAccount.
+Modify the class LimitedBankAccount to:
+a)
+Modify the "deposit" method in LimitedBankAccount so that you can't have a balance higher than 100.000.
+b)
+Modify the "withdraw" method so that if the account we are trying to withdraw is greater than the balance, it should permit to withdraw only the "balance" amount and it should show a message indicating it.*/
 package com.daw.programming;
 
 /**
@@ -12,9 +15,18 @@ public class LimitedBankAccount extends BankAccount {
 
     public void withdraw(int amount) {
         if (amount > getBalance()) {
-            System.out.println("FORBIDEN: There is not enough balance");
+            System.out.println("You don't have that money, you only withdraw " + getBalance());
+            super.withdraw(getBalance());
         } else {
             super.withdraw(amount);
+        }
+    }
+
+    public void deposit(int amount) {
+        if (getBalance() + amount > 100000) {
+            System.out.println("FORBIDEN: You can't have more than 100000, you have already: " + getBalance());
+        } else {
+            super.deposit(amount);
         }
     }
 
