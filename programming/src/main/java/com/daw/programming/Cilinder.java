@@ -34,13 +34,14 @@ public class Cilinder extends Circle {
     }
 
     public double area() {
-
         return 2 * super.area() + super.perimeter() * height;
     }
 
     public static void main(String[] args) {
         Cilinder cilinder1 = new Cilinder(4, 8);
-        System.out.println("El volumen de un cilindro con radio = " + cilinder1.getRadius() + " cm y con altura = " + cilinder1.getHeight() + " cm es de ~" + Math.round(cilinder1.area()) + " centimetros cubicos");
+        System.out.println("El volumen de un cilindro con radio = " + cilinder1.getRadius() + " cm y con altura = " + cilinder1.getHeight() + " cm es de ~" + Math.round(cilinder1.volume()) + " centimetros cubicos");
+        System.out.println("El area de un cilindro con radio = " + cilinder1.getRadius() + " cm y con altura = " + cilinder1.getHeight() + " cm es de ~" + Math.round(cilinder1.area()) + " centimetros cubicos");
+
     }
 
 }
