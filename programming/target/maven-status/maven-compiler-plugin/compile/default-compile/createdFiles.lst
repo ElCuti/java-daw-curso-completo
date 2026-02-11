@@ -4,6 +4,7 @@ com\daw\programming\LimitedBankAccount.class
 com\daw\programming\Challenge5_6.class
 com\daw\programming\Challenge3_16c.class
 com\daw\programming\Challenge5_16.class
+com\daw\programming\ShoppingCart.class
 com\daw\programming\Challenge3_16q.class
 com\daw\programming\Challenge3_16n.class
 com\daw\programming\Challenge4_4.class
@@ -27,6 +28,7 @@ com\daw\programming\Time.class
 com\daw\programming\Challenge3_9.class
 com\daw\programming\Challenge3_16m.class
 com\daw\programming\Challenge3_16d.class
+com\daw\programming\Challenge6_14.class
 com\daw\programming\Challenge5_20f.class
 com\daw\programming\Challenge3_12.class
 com\daw\programming\Challenge3_16t.class
@@ -83,8 +85,10 @@ com\daw\programming\Challenge5_20h.class
 com\daw\programming\BankAccount.class
 com\daw\programming\Challenge5_3.class
 com\daw\programming\Challenge3_16b.class
+com\daw\programming\ProductOnSale.class
 com\daw\programming\Challenge4_2.class
 com\daw\programming\Challenge3_16o.class
+com\daw\programming\Product.class
 com\daw\programming\Challenge5_18.class
 com\daw\programming\Challenge4_5.class
 com\daw\programming\Cilinder.class
