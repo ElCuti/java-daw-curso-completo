@@ -2,17 +2,20 @@
  */
 package com.daw.programming;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+
+
 
 public class ShoppingCart {
 
-    private ArrayList<Product> productos = new ArrayList<Product>();
+    HashMap<Product, Integer> productos = new HashMap();
 
     public ShoppingCart() {
     }
 
     public void addProduct(Product producto) {
-        productos.add(producto);
+        int timesInCart = productos.get(producto);
+        productos.put(producto, timesInCart+1);
     }
 
     public void removeProduct(Product producto) {
@@ -21,7 +24,7 @@ public class ShoppingCart {
 
     public float cartPrice() {
         float totalPrice = 0;
-        for (Product producto : productos) {
+        for (Product producto : productos.keySet()) {
             float price = producto.getPrice();
             totalPrice += price;
         }
