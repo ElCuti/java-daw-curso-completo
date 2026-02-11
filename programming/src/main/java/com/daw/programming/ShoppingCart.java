@@ -15,14 +15,6 @@ public class ShoppingCart {
         productos.add(producto);
     }
 
-    public void addProduct(ProductOnSale producto) {
-        float precio = producto.getPrice();
-        int descuento = producto.getDiscount();
-        float precioFinal = precio * (1-(descuento/100));
-        producto.setPrice(precioFinal);
-        productos.add(producto);
-    }
-
     public void removeProduct(Product producto) {
         productos.remove(producto);
     }

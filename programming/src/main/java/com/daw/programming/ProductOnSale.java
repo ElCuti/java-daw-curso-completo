@@ -4,15 +4,18 @@ package com.daw.programming;
 
 public class ProductOnSale extends Product {
 
-    private int discount;
+    private float discount;
 
-    public ProductOnSale(String name, float price, int discount) {
+    public ProductOnSale(String name, float price, float discount) {
         super(name, price);
         this.discount = discount;
     }
 
-    public int getDiscount() {
+    public float getDiscount() {
         return discount;
     }
-    
+
+    public float getPrice() {
+        return super.getPrice() * (1 - (discount / 100));
+    }
 }
