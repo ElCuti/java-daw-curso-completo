@@ -35,7 +35,7 @@ public class Cilinder extends Circle {
 
     public double area() {
 
-        return 2 * super.area() + perimeter() * height;
+        return 2 * super.area() + super.perimeter() * height;
     }
 
     public static void main(String[] args) {
