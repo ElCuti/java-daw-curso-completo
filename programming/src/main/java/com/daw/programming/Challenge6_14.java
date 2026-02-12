@@ -6,9 +6,7 @@ We are going to have a "Shopping cart" in which we will introduce the products w
 The "shopping cart" have to calculate the total price of the articles.
 b)
 Modify the shopping cart to insert the quantity desired of each product.*/
-package com.daw.programming;
-
-import java.util.ArrayList;
+package com.daw.programming; 
 
 public class Challenge6_14 {
 
@@ -40,8 +38,8 @@ public class Challenge6_14 {
         ProductOnSale productOS5 = new ProductOnSale("Linterna LED", 18, 10);
 
         cart.addProduct(product001);
-        cart.addProduct(product012);
-        cart.addProduct(product010);
+        cart.addProduct(product012, 2);
+        cart.addProduct(product010, -3);
         cart.addProduct(product009);
         cart.addProduct(product005);
         cart.addProduct(product005);

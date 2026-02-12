@@ -20,6 +20,14 @@ public class ShoppingCart {
         }
     }
 
+    public void addProduct(Product producto, int repeticiones) {
+        if (repeticiones < 0) {
+            System.out.println("ERROR: Pon una cantidad correcta!");
+        } else {
+            productos.put(producto, repeticiones);
+        }
+    }
+
     public void removeProduct(Product producto) {
         productos.remove(producto);
     }
