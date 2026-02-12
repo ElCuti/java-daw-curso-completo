@@ -14,7 +14,7 @@ public class Challenge6_14 {
 
     public static void main(String[] args) {
         ShoppingCart cart = new ShoppingCart();
-        
+
         // LISTA DE PRODUCTOS
         Product product001 = new Product("Destornillador", 6);
         Product product002 = new Product("Tornillos(x100)", 2);
@@ -31,22 +31,22 @@ public class Challenge6_14 {
         Product product013 = new Product("Caja herramientas", 35);
         Product product014 = new Product("Guantes trabajo", 5);
         Product product015 = new Product("Mascarilla polvo", 2);
-        
-        
+
         // LISTA DE PRODUCTOS EN DESCUENTO
         ProductOnSale productOS1 = new ProductOnSale("Pala", 10, 20);
         ProductOnSale productOS2 = new ProductOnSale("Escoba", 7, 15);
         ProductOnSale productOS3 = new ProductOnSale("Lijadora", 45, 25);
         ProductOnSale productOS4 = new ProductOnSale("Compresor pequeño", 120, 30);
         ProductOnSale productOS5 = new ProductOnSale("Linterna LED", 18, 10);
-        
+
         cart.addProduct(product001);
         cart.addProduct(product012);
         cart.addProduct(product010);
         cart.addProduct(product009);
         cart.addProduct(product005);
-        cart.addProduct(productOS5);
-        
+        cart.addProduct(product005);
+        cart.addProduct(product005);
+
         System.out.println(cart.cartPrice());
 
     }

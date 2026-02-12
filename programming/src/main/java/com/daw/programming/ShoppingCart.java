@@ -4,8 +4,6 @@ package com.daw.programming;
 
 import java.util.HashMap;
 
-
-
 public class ShoppingCart {
 
     HashMap<Product, Integer> productos = new HashMap();
@@ -14,8 +12,12 @@ public class ShoppingCart {
     }
 
     public void addProduct(Product producto) {
-        int timesInCart = productos.get(producto);
-        productos.put(producto, timesInCart+1);
+        if (productos.containsKey(producto)) {
+            int timesInCart = productos.get(producto);
+            productos.put(producto, timesInCart + 1);
+        } else {
+            productos.put(producto, 1);
+        }
     }
 
     public void removeProduct(Product producto) {
@@ -25,8 +27,9 @@ public class ShoppingCart {
     public float cartPrice() {
         float totalPrice = 0;
         for (Product producto : productos.keySet()) {
+            int timesInCart = productos.get(producto);
             float price = producto.getPrice();
-            totalPrice += price;
+            totalPrice += price * timesInCart;
         }
         return totalPrice;
     }
