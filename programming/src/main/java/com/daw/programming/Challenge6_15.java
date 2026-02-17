@@ -18,9 +18,24 @@ Try to create an Object from the class "Figure". What happens?
 Create a new class for triangles. Is it forcing you to create the print method?*/
 package com.daw.programming;
 
+import java.util.ArrayList;
+
 public class Challenge6_15 {
 
     public static void main(String[] args) {
+        //Linea: String color, int corX, int corY, int corX2, int corY2
+        //Rectangulo: String color, int corX, int corY, float width, float height
+        ArrayList<Figura2d> figuras = new ArrayList();
+        Linea linea1 = new Linea("azul", 2, 3, 5, 8);
+        Linea linea2 = new Linea("verde", 12, 15, 2, -2);
+        Rectangulo rectangulo1 = new Rectangulo("rosa", 6, 8, 30, 60);
+        figuras.add(linea1);
+        figuras.add(linea2);
+        figuras.add(rectangulo1);
+        
+        for(Figura2d figura : figuras){
+            figura.print();
+        }
     }
 
 }
