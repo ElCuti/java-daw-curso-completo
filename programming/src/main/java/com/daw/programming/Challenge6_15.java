@@ -32,8 +32,8 @@ public class Challenge6_15 {
         figuras.add(linea1);
         figuras.add(linea2);
         figuras.add(rectangulo1);
-        
-        for(Figure figura : figuras){
+
+        for (Figure figura : figuras) {
             figura.print();
         }
     }

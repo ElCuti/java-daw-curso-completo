@@ -1,4 +1,3 @@
-
 package com.daw.programming;
 
 public class Linea extends Figure {

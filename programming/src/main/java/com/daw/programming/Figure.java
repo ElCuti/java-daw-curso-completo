@@ -1,4 +1,3 @@
-
 package com.daw.programming;
 
 abstract class Figure {
@@ -6,6 +5,7 @@ abstract class Figure {
     private String color;
     private int corX;
     private int corY;
+
     abstract void print();
 
     public Figure(String color, int corX, int corY) {
@@ -38,6 +38,4 @@ abstract class Figure {
         this.corY = corY;
     }
 
-     
-        
 }
