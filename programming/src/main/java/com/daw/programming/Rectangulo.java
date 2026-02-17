@@ -1,14 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.daw.programming;
 
-/**
- *
- * @author Alumnado
- */
-public class Rectangulo extends Figura2d {
+public class Rectangulo extends Figure {
 
     private float width;
     private float height;

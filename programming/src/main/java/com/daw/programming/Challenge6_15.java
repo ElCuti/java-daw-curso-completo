@@ -25,7 +25,7 @@ public class Challenge6_15 {
     public static void main(String[] args) {
         //Linea: String color, int corX, int corY, int corX2, int corY2
         //Rectangulo: String color, int corX, int corY, float width, float height
-        ArrayList<Figura2d> figuras = new ArrayList();
+        ArrayList<Figure> figuras = new ArrayList();
         Linea linea1 = new Linea("azul", 2, 3, 5, 8);
         Linea linea2 = new Linea("verde", 12, 15, 2, -2);
         Rectangulo rectangulo1 = new Rectangulo("rosa", 6, 8, 30, 60);
@@ -33,7 +33,7 @@ public class Challenge6_15 {
         figuras.add(linea2);
         figuras.add(rectangulo1);
         
-        for(Figura2d figura : figuras){
+        for(Figure figura : figuras){
             figura.print();
         }
     }

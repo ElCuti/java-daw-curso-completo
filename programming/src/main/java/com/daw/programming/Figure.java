@@ -1,22 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.daw.programming;
 
-import java.util.ArrayList;
-
-/**
- *
- * @author Alumnado
- */
-public class Figura2d {
+abstract class Figure {
 
     private String color;
     private int corX;
     private int corY;
+    abstract void print();
 
-    public Figura2d(String color, int corX, int corY) {
+    public Figure(String color, int corX, int corY) {
         this.color = color;
         this.corX = corX;
         this.corY = corY;
@@ -46,7 +38,6 @@ public class Figura2d {
         this.corY = corY;
     }
 
-    public void print() {
-        System.out.println("Soy una figura, empiezo en la cordenada " + getCorX() + "," + getCorY());
-    }
+     
+        
 }

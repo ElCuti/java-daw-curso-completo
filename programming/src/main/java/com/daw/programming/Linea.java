@@ -1,14 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.daw.programming;
 
-/**
- *
- * @author Alumnado
- */
-public class Linea extends Figura2d {
+public class Linea extends Figure {
 
     private int corX2;
     private int corY2;
