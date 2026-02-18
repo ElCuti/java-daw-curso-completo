@@ -1,5 +1,6 @@
 package com.daw.programming;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Linea extends Figure {
@@ -7,7 +8,7 @@ public class Linea extends Figure {
     private int corX2;
     private int corY2;
 
-    public Linea(String color, int corX, int corY, int corX2, int corY2) {
+    public Linea(Color color, int corX, int corY, int corX2, int corY2) {
         super(color, corX, corY);
         this.corX2 = corX2;
         this.corY2 = corY2;

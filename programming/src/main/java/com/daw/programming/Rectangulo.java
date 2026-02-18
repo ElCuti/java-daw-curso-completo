@@ -1,5 +1,6 @@
 package com.daw.programming;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Rectangulo extends Figure {
@@ -7,7 +8,7 @@ public class Rectangulo extends Figure {
     private int width;
     private int height;
 
-    public Rectangulo(String color, int corX, int corY, int width, int height) {
+    public Rectangulo(Color color, int corX, int corY, int width, int height) {
         super(color, corX, corY);
         this.width = width;
         this.height = height;

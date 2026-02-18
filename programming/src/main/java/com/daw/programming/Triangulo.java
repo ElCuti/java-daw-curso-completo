@@ -1,5 +1,6 @@
 package com.daw.programming;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Triangulo extends Figure {
@@ -9,7 +10,7 @@ public class Triangulo extends Figure {
     private int corX3;
     private int corY3;
 
-    public Triangulo(String color, int corX, int corY, int corX2, int corY2, int corY3, int corX3) {
+    public Triangulo(Color color, int corX, int corY, int corX2, int corY2, int corY3, int corX3) {
         super(color, corX, corY);
         this.corX2 = corX2;
         this.corY2 = corY2;

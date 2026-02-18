@@ -1,26 +1,27 @@
 package com.daw.programming;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 abstract class Figure {
 
-    private String color;
+    private Color color;
     private int corX;
     private int corY;
     abstract void print();
     abstract void draw(Graphics g);
 
-    public Figure(String color, int corX, int corY) {
+    public Figure(Color color, int corX, int corY) {
         this.color = color;
         this.corX = corX;
         this.corY = corY;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
     
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 

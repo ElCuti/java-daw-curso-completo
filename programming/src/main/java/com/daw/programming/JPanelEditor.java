@@ -46,6 +46,7 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import java.awt.Color;
 
 public class JPanelEditor extends javax.swing.JPanel {
 ArrayList<Figure> figuras = new ArrayList();
@@ -66,12 +67,14 @@ ArrayList<Figure> figuras = new ArrayList();
         window.setLocation(100, 100);
         window.setVisible(true);
         
-        Linea linea1 = new Linea("azul", 200, 1, 400, 400);
-        Rectangulo rectangulo1 = new Rectangulo("rosa", 1, 200, 100, 180);
-        Triangulo triangulo1 = new Triangulo("amarillo", 100, 50, 150, 100, 200, 150);
+        Linea linea1 = new Linea(Color.gray, 200, 1, 400, 400);
+        Rectangulo rectangulo1 = new Rectangulo(Color.blue, 1, 200, 100, 180);
+        Triangulo triangulo1 = new Triangulo(Color.red, 100, 50, 150, 100, 200, 150);
+        Ovalo ovalo1 = new Ovalo(Color.yellow, 400, 300, 200, 500);
         jPanelEditor.addFigure(linea1);
         jPanelEditor.addFigure(rectangulo1);
         jPanelEditor.addFigure(triangulo1);
+        jPanelEditor.addFigure(ovalo1);
     }
 
     public void paintComponent(Graphics g) {
@@ -79,6 +82,7 @@ ArrayList<Figure> figuras = new ArrayList();
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         for (Figure figura : figuras) {
             figura.draw(g2d);
+            g2d.setColor(figura.getColor());
         }
     }
 
