@@ -7,21 +7,21 @@ package com.daw.programming;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Ovalo extends Figure{
+public class Ovalo extends Figure {
 
     private int width;
     private int height;
 
-    public Ovalo (Color color, int corX, int corY, int width, int height) {
+    public Ovalo(Color color, int corX, int corY, int width, int height) {
         super(color, corX, corY);
         this.width = width;
         this.height = height;
     }
-    
+
     void print() {
         System.out.println("Soy un ovalo, empiezo en la cordenada " + getCorX() + "," + getCorY() + " y mi altura es " + getHeight() + " y mi anchura es " + getWidth());
     }
-    
+
     void draw(Graphics g) {
         g.drawOval(getCorX(), getCorY(), width, height);
     }
@@ -41,5 +41,5 @@ public class Ovalo extends Figure{
     public void setHeight(int height) {
         this.height = height;
     }
-    
+
 }

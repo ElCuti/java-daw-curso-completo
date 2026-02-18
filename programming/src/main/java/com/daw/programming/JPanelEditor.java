@@ -49,15 +49,17 @@ import javax.swing.JFrame;
 import java.awt.Color;
 
 public class JPanelEditor extends javax.swing.JPanel {
-ArrayList<Figure> figuras = new ArrayList();
+
+    ArrayList<Figure> figuras = new ArrayList();
+
     public JPanelEditor() {
         initComponents();
     }
 
-    public void addFigure(Figure figura){
+    public void addFigure(Figure figura) {
         figuras.add(figura);
     }
-    
+
     public static void main(String[] args) {
         JPanelEditor jPanelEditor = new JPanelEditor();
         JFrame window = new JFrame("Mi Editor");
@@ -66,11 +68,11 @@ ArrayList<Figure> figuras = new ArrayList();
         window.setSize(750, 500);
         window.setLocation(100, 100);
         window.setVisible(true);
-        
-        Linea linea1 = new Linea(Color.gray, 200, 1, 400, 400);
+
+        Linea linea1 = new Linea(Color.yellow, 200, 1, 400, 400);
         Rectangulo rectangulo1 = new Rectangulo(Color.blue, 1, 200, 100, 180);
         Triangulo triangulo1 = new Triangulo(Color.red, 100, 50, 150, 100, 200, 150);
-        Ovalo ovalo1 = new Ovalo(Color.yellow, 400, 300, 200, 500);
+        Ovalo ovalo1 = new Ovalo(Color.gray, 400, 300, 200, 500);
         jPanelEditor.addFigure(linea1);
         jPanelEditor.addFigure(rectangulo1);
         jPanelEditor.addFigure(triangulo1);
@@ -81,8 +83,9 @@ ArrayList<Figure> figuras = new ArrayList();
         Graphics2D g2d = (Graphics2D) g.create();
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         for (Figure figura : figuras) {
-            figura.draw(g2d);
             g2d.setColor(figura.getColor());
+            figura.draw(g2d);
+
         }
     }
 

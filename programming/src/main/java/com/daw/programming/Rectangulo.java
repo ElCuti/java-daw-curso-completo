@@ -17,7 +17,7 @@ public class Rectangulo extends Figure {
     public void print() {
         System.out.println("Soy un rectangulo, empiezo en la cordenada " + getCorX() + "," + getCorY() + " y mi altura es " + getHeight() + " y mi anchura es " + getWidth());
     }
-    
+
     public void draw(Graphics g) {
         g.drawRect(getCorX(), getCorY(), width, height);
     }

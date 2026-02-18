@@ -8,7 +8,9 @@ abstract class Figure {
     private Color color;
     private int corX;
     private int corY;
+
     abstract void print();
+
     abstract void draw(Graphics g);
 
     public Figure(Color color, int corX, int corY) {
@@ -20,7 +22,7 @@ abstract class Figure {
     public Color getColor() {
         return color;
     }
-    
+
     public void setColor(Color color) {
         this.color = color;
     }
