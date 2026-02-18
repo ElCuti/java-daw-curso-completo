@@ -1,5 +1,7 @@
 package com.daw.programming;
 
+import java.awt.Graphics;
+
 public class Linea extends Figure {
 
     private int corX2;
@@ -15,6 +17,11 @@ public class Linea extends Figure {
         System.out.println("Soy una linea, empiezo en la cordenada " + getCorX() + "," + getCorY() + " y termino en la coordenada " + getCorX2() + "," + getCorY2());
     }
 
+    public void draw(Graphics g) {
+        g.drawLine(getCorX(), getCorY(), corX2, corY2);
+    }
+            
+            
     public int getCorX2() {
         return corX2;
     }

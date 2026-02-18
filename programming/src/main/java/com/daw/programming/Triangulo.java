@@ -1,5 +1,7 @@
 package com.daw.programming;
 
+import java.awt.Graphics;
+
 public class Triangulo extends Figure {
 
     private int corX2;
@@ -18,6 +20,12 @@ public class Triangulo extends Figure {
 
     public void print() {
         System.out.println("Soy un triangulo, mis esquinas estan en: (" + getCorX() + "," + getCorY() + "), (" + getCorX2() + "," + getCorY2() + ") y (" + getCorX3() + "," + getCorY3() + ").");
+    }
+
+    public void draw(Graphics g) {
+        int[] vx1 = {getCorX(), corX2, corX3};
+        int[] vy1 = {getCorY(), corY2, corY3};
+        g.drawPolygon(vx1, vy1, 3);
     }
 
     public int getCorX2() {

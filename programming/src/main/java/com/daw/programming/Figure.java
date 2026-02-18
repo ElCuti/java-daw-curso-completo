@@ -1,12 +1,14 @@
 package com.daw.programming;
 
+import java.awt.Graphics;
+
 abstract class Figure {
 
     private String color;
     private int corX;
     private int corY;
-
     abstract void print();
+    abstract void draw(Graphics g);
 
     public Figure(String color, int corX, int corY) {
         this.color = color;
@@ -17,7 +19,7 @@ abstract class Figure {
     public String getColor() {
         return color;
     }
-
+    
     public void setColor(String color) {
         this.color = color;
     }
