@@ -12,6 +12,7 @@ abstract class Figure {
     abstract void print();
 
     abstract void draw(Graphics g);
+    abstract void moveFigure(int movX, int movY);
 
     public Figure(Color color, int corX, int corY) {
         this.color = color;

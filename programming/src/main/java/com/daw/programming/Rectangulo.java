@@ -22,6 +22,11 @@ public class Rectangulo extends Figure {
         g.drawRect(getCorX(), getCorY(), width, height);
     }
 
+    public void moveFigure(int movX, int movY) {
+        setCorX(getCorX() + movX);
+        setCorY(getCorY() + movY);
+    }
+
     public float getWidth() {
         return width;
     }

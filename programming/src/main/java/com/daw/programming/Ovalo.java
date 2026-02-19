@@ -26,6 +26,11 @@ public class Ovalo extends Figure {
         g.drawOval(getCorX(), getCorY(), width, height);
     }
 
+    public void moveFigure(int movX, int movY) {
+        setCorX(getCorX() + movX);
+        setCorY(getCorY() + movY);
+    }
+
     public int getWidth() {
         return width;
     }

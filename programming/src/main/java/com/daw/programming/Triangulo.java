@@ -29,6 +29,11 @@ public class Triangulo extends Figure {
         g.drawPolygon(vx1, vy1, 3);
     }
 
+    public void moveFigure(int movX, int movY) {
+        setCorX(getCorX() + movX);
+        setCorY(getCorY() + movY);
+    }
+
     public int getCorX2() {
         return corX2;
     }

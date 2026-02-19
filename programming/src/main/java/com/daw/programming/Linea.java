@@ -21,8 +21,12 @@ public class Linea extends Figure {
     public void draw(Graphics g) {
         g.drawLine(getCorX(), getCorY(), corX2, corY2);
     }
-            
-            
+
+    public void moveFigure(int movX, int movY) {
+        setCorX(getCorX() + movX);
+        setCorY(getCorY() + movY);
+    }
+
     public int getCorX2() {
         return corX2;
     }
