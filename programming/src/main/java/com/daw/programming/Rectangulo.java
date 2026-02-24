@@ -19,7 +19,7 @@ public class Rectangulo extends Figure {
     }
 
     public void draw(Graphics g) {
-        g.drawRect(getCorX(), getCorY(), width, height);
+        g.drawRect((int) (getCorX()*getZoom()), (int) (getCorY()*getZoom()), (int) (width*getZoom()), (int) (height*getZoom()));
     }
 
     public void moveFigure(int movX, int movY) {

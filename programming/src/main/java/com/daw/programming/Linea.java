@@ -19,7 +19,7 @@ public class Linea extends Figure {
     }
 
     public void draw(Graphics g) {
-        g.drawLine(getCorX(), getCorY(), corX2, corY2);
+        g.drawLine((int) (getCorX()*getZoom()), (int) (getCorY()*getZoom()), (int) (corX2*getZoom()), (int) (corY2*getZoom()));
     }
 
     public void moveFigure(int movX, int movY) {

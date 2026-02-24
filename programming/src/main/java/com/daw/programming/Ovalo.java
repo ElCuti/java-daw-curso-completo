@@ -23,7 +23,7 @@ public class Ovalo extends Figure {
     }
 
     void draw(Graphics g) {
-        g.drawOval(getCorX(), getCorY(), width, height);
+        g.drawOval((int) (getCorX()*getZoom()), (int) (getCorY()*getZoom()), (int) (width*getZoom()), (int) (height*getZoom()));
     }
 
     public void moveFigure(int movX, int movY) {

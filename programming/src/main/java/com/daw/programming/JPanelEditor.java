@@ -64,6 +64,8 @@ b)
  */
 package com.daw.programming;
 
+import static com.daw.programming.Figure.getZoom;
+import static com.daw.programming.Figure.setZoom;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -74,6 +76,7 @@ import java.awt.Color;
 public class JPanelEditor extends javax.swing.JPanel {
 
     ArrayList<Figure> figuras = new ArrayList();
+    double typeZoom = 1;
 
     public JPanelEditor() {
         initComponents();
@@ -133,6 +136,8 @@ public class JPanelEditor extends javax.swing.JPanel {
         jbMoveDown = new javax.swing.JButton();
         jbSpeed = new javax.swing.JSlider();
         jLabel1 = new javax.swing.JLabel();
+        jbZoomIn = new javax.swing.JButton();
+        jbZoomOut = new javax.swing.JButton();
 
         jbMoveRight.setText("RIGHT");
         jbMoveRight.addActionListener(new java.awt.event.ActionListener() {
@@ -168,6 +173,20 @@ public class JPanelEditor extends javax.swing.JPanel {
 
         jLabel1.setText("SPEED");
 
+        jbZoomIn.setText("+");
+        jbZoomIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbZoomInActionPerformed(evt);
+            }
+        });
+
+        jbZoomOut.setText("-");
+        jbZoomOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbZoomOutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -179,11 +198,6 @@ public class JPanelEditor extends javax.swing.JPanel {
                         .addComponent(jbMoveDown)
                         .addGap(52, 52, 52))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jbMoveLeft)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbMoveRight, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jbSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -191,12 +205,25 @@ public class JPanelEditor extends javax.swing.JPanel {
                         .addGap(76, 76, 76))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jbMoveTop)
-                        .addGap(60, 60, 60))))
+                        .addGap(60, 60, 60))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jbZoomIn)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jbMoveLeft)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jbMoveRight, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jbZoomOut))
+                        .addGap(12, 12, 12))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(157, Short.MAX_VALUE)
+                .addGap(67, 67, 67)
+                .addComponent(jbZoomIn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbZoomOut)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(jbMoveTop)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -213,7 +240,7 @@ public class JPanelEditor extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbMoveRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveRightActionPerformed
-       int valorActual = jbSpeed.getValue();
+        int valorActual = jbSpeed.getValue();
         int movX = valorActual;
         int movY = 0;
         move(movX, movY);
@@ -223,14 +250,14 @@ public class JPanelEditor extends javax.swing.JPanel {
     private void jbMoveTopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveTopActionPerformed
         int valorActual = jbSpeed.getValue();
         int movX = 0;
-        int movY = -1*valorActual;
+        int movY = -1 * valorActual;
         move(movX, movY);
         this.getParent().repaint();
     }//GEN-LAST:event_jbMoveTopActionPerformed
 
     private void jbMoveLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveLeftActionPerformed
         int valorActual = jbSpeed.getValue();
-        int movX = -1*valorActual;
+        int movX = -1 * valorActual;
         int movY = 0;
         move(movX, movY);
         this.getParent().repaint();
@@ -244,6 +271,26 @@ public class JPanelEditor extends javax.swing.JPanel {
         this.getParent().repaint();
     }//GEN-LAST:event_jbMoveDownActionPerformed
 
+    private void jbZoomOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbZoomOutActionPerformed
+        double typeZoom = getZoom();
+        typeZoom -= 0.25;
+        if (typeZoom < 0.25) {
+            typeZoom = 0.25;
+        }
+        setZoom(typeZoom);
+        this.getParent().repaint();
+    }//GEN-LAST:event_jbZoomOutActionPerformed
+
+    private void jbZoomInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbZoomInActionPerformed
+        double typeZoom = getZoom();
+        typeZoom += 0.25;
+        if (typeZoom > 2) {
+            typeZoom = 2;
+        }
+        setZoom(typeZoom);
+        this.getParent().repaint();
+    }//GEN-LAST:event_jbZoomInActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -252,5 +299,7 @@ public class JPanelEditor extends javax.swing.JPanel {
     private javax.swing.JButton jbMoveRight;
     private javax.swing.JButton jbMoveTop;
     private javax.swing.JSlider jbSpeed;
+    private javax.swing.JButton jbZoomIn;
+    private javax.swing.JButton jbZoomOut;
     // End of variables declaration//GEN-END:variables
 }

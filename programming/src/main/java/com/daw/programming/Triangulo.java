@@ -24,8 +24,8 @@ public class Triangulo extends Figure {
     }
 
     public void draw(Graphics g) {
-        int[] vx1 = {getCorX(), corX2, corX3};
-        int[] vy1 = {getCorY(), corY2, corY3};
+        int[] vx1 = {(int) (getCorX()*getZoom()), (int) (corX2*getZoom()), (int) (corX3*getZoom())};
+        int[] vy1 = {(int) (getCorY()*getZoom()), (int) (corY2*getZoom()), (int) (corY3*getZoom())};
         g.drawPolygon(vx1, vy1, 3);
     }
 

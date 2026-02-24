@@ -8,10 +8,12 @@ abstract class Figure {
     private Color color;
     private int corX;
     private int corY;
+    private static double zoom = 1;
 
     abstract void print();
 
     abstract void draw(Graphics g);
+
     abstract void moveFigure(int movX, int movY);
 
     public Figure(Color color, int corX, int corY) {
@@ -44,4 +46,11 @@ abstract class Figure {
         this.corY = corY;
     }
 
+    public static double getZoom() {
+        return zoom;
+    }
+
+    public static void setZoom(double aZoom) {
+        zoom = aZoom;
+    }
 }
