@@ -32,6 +32,10 @@ public class Triangulo extends Figure {
     public void moveFigure(int movX, int movY) {
         setCorX(getCorX() + movX);
         setCorY(getCorY() + movY);
+        setCorX2(getCorX2() + movX);
+        setCorY2(getCorY2() + movY);
+        setCorX3(getCorX3() + movX);
+        setCorY3(getCorY3() + movY);
     }
 
     public int getCorX2() {
