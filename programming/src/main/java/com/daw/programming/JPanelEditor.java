@@ -131,101 +131,126 @@ public class JPanelEditor extends javax.swing.JPanel {
         jbMoveTop = new javax.swing.JButton();
         jbMoveLeft = new javax.swing.JButton();
         jbMoveDown = new javax.swing.JButton();
+        jbSpeed = new javax.swing.JSlider();
+        jLabel1 = new javax.swing.JLabel();
 
-        jbMoveRight.setText("-->");
+        jbMoveRight.setText("RIGHT");
         jbMoveRight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbMoveRightActionPerformed(evt);
             }
         });
 
-        jbMoveTop.setText("^");
+        jbMoveTop.setText("UP");
         jbMoveTop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbMoveTopActionPerformed(evt);
             }
         });
 
-        jbMoveLeft.setText("<--");
+        jbMoveLeft.setText("LEFT");
         jbMoveLeft.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbMoveLeftActionPerformed(evt);
             }
         });
 
-        jbMoveDown.setText("S");
+        jbMoveDown.setText("DOWN");
         jbMoveDown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbMoveDownActionPerformed(evt);
             }
         });
 
+        jbSpeed.setMinimum(1);
+        jbSpeed.setPaintLabels(true);
+        jbSpeed.setPaintTicks(true);
+
+        jLabel1.setText("SPEED");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(252, Short.MAX_VALUE)
+                .addContainerGap(240, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jbMoveDown)
+                        .addGap(52, 52, 52))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jbMoveLeft)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbMoveRight, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19))
+                        .addComponent(jbMoveRight, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jbSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(76, 76, 76))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jbMoveTop)
-                        .addGap(66, 66, 66))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jbMoveDown)
-                        .addGap(64, 64, 64))))
+                        .addGap(60, 60, 60))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(224, Short.MAX_VALUE)
+                .addContainerGap(157, Short.MAX_VALUE)
                 .addComponent(jbMoveTop)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbMoveRight)
-                    .addComponent(jbMoveLeft))
-                .addGap(1, 1, 1)
-                .addComponent(jbMoveDown))
+                    .addComponent(jbMoveLeft)
+                    .addComponent(jbMoveRight))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbMoveDown)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbMoveRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveRightActionPerformed
-        int movX = 10;
+       int valorActual = jbSpeed.getValue();
+        int movX = valorActual;
         int movY = 0;
         move(movX, movY);
         this.getParent().repaint();
     }//GEN-LAST:event_jbMoveRightActionPerformed
 
     private void jbMoveTopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveTopActionPerformed
+        int valorActual = jbSpeed.getValue();
         int movX = 0;
-        int movY = -10;
+        int movY = -1*valorActual;
         move(movX, movY);
         this.getParent().repaint();
     }//GEN-LAST:event_jbMoveTopActionPerformed
 
     private void jbMoveLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveLeftActionPerformed
-        int movX = -10;
+        int valorActual = jbSpeed.getValue();
+        int movX = -1*valorActual;
         int movY = 0;
         move(movX, movY);
         this.getParent().repaint();
     }//GEN-LAST:event_jbMoveLeftActionPerformed
 
     private void jbMoveDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveDownActionPerformed
+        int valorActual = jbSpeed.getValue();
         int movX = 0;
-        int movY = 10;
+        int movY = valorActual;
         move(movX, movY);
         this.getParent().repaint();
     }//GEN-LAST:event_jbMoveDownActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jbMoveDown;
     private javax.swing.JButton jbMoveLeft;
     private javax.swing.JButton jbMoveRight;
     private javax.swing.JButton jbMoveTop;
+    private javax.swing.JSlider jbSpeed;
     // End of variables declaration//GEN-END:variables
 }
