@@ -9,6 +9,7 @@ abstract class Figure {
     private int corX;
     private int corY;
     private static double zoom = 1;
+    private static double stroke = 1;
 
     abstract void print();
 
@@ -52,5 +53,13 @@ abstract class Figure {
 
     public static void setZoom(double aZoom) {
         zoom = aZoom;
+    }
+
+    public static double getStroke() {
+        return stroke;
+    }
+
+    public static void setStroke(double aStroke) {
+        stroke = aStroke;
     }
 }
