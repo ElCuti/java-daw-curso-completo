@@ -1,8 +1,10 @@
 /*
  NO ES UN EJERCICIO, ES UNA INTRODUCCIÓN*/
 package com.daw.programming;
+import java.util.ArrayList;
+import java.util.Collections;
 
-public class Person {
+public class Person implements Comparable<Person> {
 
     private String name;
     private int age;
@@ -21,7 +23,7 @@ public class Person {
     public static int getNumberOfPersons() {
         return numberOfPersons;
     }
-
+    
     public int getAge() {
         return age;
     }
@@ -59,7 +61,7 @@ public class Person {
     }
 
     public String toString() {
-        return "Me llamo: " + name + " y tengo " + age + " anios.";
+        return name;
     }
 
     public boolean gcCheck() {
@@ -89,7 +91,12 @@ public class Person {
         Person person1 = new Person("Juan", 25, 177);
         Person person2 = new Person("Luisa", 29, 159);
         Person person3 = new Person("Ana", 33, 169);
-
+        ArrayList<Person> personas = new ArrayList();
+        personas.add(person1);
+        personas.add(person2);
+        personas.add(person3);
+        Collections.sort(personas);
+        System.out.println(personas);
         /*
         System.out.println(person1.name + ", " + person1.age);
         System.out.println(person2.name + ", " + person2.age);
@@ -115,4 +122,11 @@ public class Person {
         System.out.println(edad);
     }
 
+    @Override
+    public int compareTo(Person o) {
+        int alturaDiferencia = this.altura - o.getAltura(); 
+        return alturaDiferencia*-1;
+    }
+
+    
 }
