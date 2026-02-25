@@ -100,14 +100,41 @@ public class JPanelEditor extends javax.swing.JPanel {
         window.setLocation(100, 100);
         window.setVisible(true);
 
-        Linea linea1 = new Linea(Color.yellow, 200, 1, 400, 400);
-        Rectangulo rectangulo1 = new Rectangulo(Color.blue, 1, 200, 100, 180);
-        Triangulo triangulo1 = new Triangulo(Color.red, 100, 50, 150, 100, 200, 150);
-        Ovalo ovalo1 = new Ovalo(Color.gray, 400, 300, 200, 500);
-        jPanelEditor.addFigure(linea1);
-        jPanelEditor.addFigure(rectangulo1);
-        jPanelEditor.addFigure(triangulo1);
-        jPanelEditor.addFigure(ovalo1);
+        Ovalo sol = new Ovalo(Color.orange, 560, 40, 120, 120);
+        Linea r1 = new Linea(Color.yellow, 620, 100, 700, 40);
+        Linea r2 = new Linea(Color.yellow, 620, 100, 700, 100);
+        Linea r3 = new Linea(Color.yellow, 620, 100, 700, 160);
+        Linea r4 = new Linea(Color.yellow, 620, 100, 560, 10);
+        Linea r5 = new Linea(Color.yellow, 620, 100, 520, 60);
+
+        Rectangulo suelo = new Rectangulo(new Color(34, 139, 34), 0, 380, 750, 120);
+
+        Rectangulo cuerpo = new Rectangulo(new Color(200, 120, 80), 120, 230, 220, 150);
+        Triangulo tejado = new Triangulo(new Color(150, 50, 30), 120, 230, 230, 140, 340, 230);
+        Rectangulo puerta = new Rectangulo(new Color(90, 50, 30), 200, 310, 40, 70);
+        Ovalo ventana1 = new Ovalo(Color.white, 150, 260, 40, 40);
+        Ovalo ventana2 = new Ovalo(Color.white, 270, 260, 40, 40);
+
+        Rectangulo tronco = new Rectangulo(new Color(101, 67, 33), 420, 300, 30, 80);
+        Ovalo copa1 = new Ovalo(new Color(34, 139, 34), 390, 240, 90, 70);
+        Ovalo copa2 = new Ovalo(new Color(50, 205, 50), 430, 220, 90, 80);
+
+        jPanelEditor.addFigure(suelo);
+        jPanelEditor.addFigure(sol);
+        jPanelEditor.addFigure(r1);
+        jPanelEditor.addFigure(r2);
+        jPanelEditor.addFigure(r3);
+        jPanelEditor.addFigure(r4);
+        jPanelEditor.addFigure(r5);
+        jPanelEditor.addFigure(cuerpo);
+        jPanelEditor.addFigure(tejado);
+        jPanelEditor.addFigure(puerta);
+        jPanelEditor.addFigure(ventana1);
+        jPanelEditor.addFigure(ventana2);
+        jPanelEditor.addFigure(tronco);
+        jPanelEditor.addFigure(copa1);
+        jPanelEditor.addFigure(copa2);
+
     }
 
     public void paintComponent(Graphics g) {
