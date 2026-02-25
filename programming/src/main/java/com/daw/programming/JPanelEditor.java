@@ -93,67 +93,87 @@ public class JPanelEditor extends javax.swing.JPanel {
 
     public static void main(String[] args) {
         JPanelEditor jPanelEditor = new JPanelEditor();
-        JFrame window = new JFrame("Mi Editor");
+        JFrame window = new JFrame("Paisaje Nocturno");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setContentPane(jPanelEditor);
-        window.setSize(750, 500);
-        window.setLocation(100, 100);
+        window.setExtendedState(JFrame.MAXIMIZED_BOTH);
         window.setVisible(true);
 
-        int cX = 375;
-int cY = 250;
+        java.awt.Dimension size = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        int w = size.width;
+        int h = size.height;
 
-for (int i = 0; i < 500; i += 5) {
-    int rG = 20 + (i / 10);
-    int bG = 40 + (i / 15);
-    jPanelEditor.addFigure(new Rectangulo(new Color(10, rG % 255, bG % 255), i / 2, i / 3, 750 - i, 500 - i));
-}
+        for (int y = 0; y < h; y += 2) {
+            int r = Math.max(0, 10 - y / 20);
+            int g = Math.max(0, 20 - y / 15);
+            int b = Math.max(30, 120 - y / 8);
+            jPanelEditor.addFigure(new Linea(new Color(r, g, b), 0, y, w, y));
+        }
 
-for (int i = 0; i < 360; i += 2) {
-    double rad = Math.toRadians(i);
-    int x2 = cX + (int) (Math.cos(rad) * 400);
-    int y2 = cY + (int) (Math.sin(rad) * 400);
-    Color cL = (i % 10 == 0) ? Color.WHITE : new Color(100, 0, 150);
-    jPanelEditor.addFigure(new Linea(cL, cX, cY, x2, y2));
-}
+        for (int i = 0; i < 450; i++) {
+            int sx = (int) (Math.random() * w);
+            int sy = (int) (Math.random() * (h * 0.6));
+            int radio = (int) (Math.random() * 3) + 1;
+            int brillo = 150 + (int) (Math.random() * 105);
+            jPanelEditor.addFigure(new Ovalo(new Color(brillo, brillo, 255), sx, sy, radio, radio));
+        }
 
-for (int i = 0; i < 360; i += 10) {
-    double rad = Math.toRadians(i);
-    int ox = cX + (int) (Math.cos(rad) * 150) - 50;
-    int oy = cY + (int) (Math.sin(rad) * 150) - 50;
-    jPanelEditor.addFigure(new Ovalo(new Color(255, 200, 0), ox, oy, 100, 100));
-}
+        int moonX = (int) (w * 0.8);
+        int moonY = (int) (h * 0.15);
+        for (int i = 120; i > 0; i -= 3) {
+            int c = 255 - (120 - i) / 2;
+            jPanelEditor.addFigure(new Ovalo(new Color(c, c, c), moonX - i / 2, moonY - i / 2, i, i));
+        }
 
-for (int i = 0; i < 360; i += 15) {
-    double r1 = Math.toRadians(i);
-    double r2 = Math.toRadians(i + 7);
-    double r3 = Math.toRadians(i - 7);
-    
-    int x1 = cX + (int) (Math.cos(r1) * 220);
-    int y1 = cY + (int) (Math.sin(r1) * 220);
-    int x2 = cX + (int) (Math.cos(r2) * 120);
-    int y2 = cY + (int) (Math.sin(r2) * 120);
-    int x3 = cX + (int) (Math.cos(r3) * 120);
-    int y3 = cY + (int) (Math.sin(r3) * 120);
-    
-    jPanelEditor.addFigure(new Triangulo(Color.CYAN, x1, y1, x2, y2, x3, y3));
-}
+        int horizon = (int) (h * 0.55);
 
-for (int i = 0; i < 360; i += 5) {
-    double rad = Math.toRadians(i);
-    int xL = cX + (int) (Math.cos(rad) * 100) - 15;
-    int yL = cY + (int) (Math.sin(rad) * 100) - 15;
-    jPanelEditor.addFigure(new Ovalo(Color.MAGENTA, xL, yL, 30, 30));
-}
+        for (int i = 0; i < 9; i++) {
+            int mx1 = (int) (w * (i * 0.12 - 0.1));
+            int my1 = horizon;
+            int mx2 = (int) (w * (i * 0.12 + 0.08));
+            int my2 = horizon - (int) (h * 0.2 + Math.random() * h * 0.15);
+            int mx3 = (int) (w * (i * 0.12 + 0.26));
+            int my3 = horizon;
 
-for (int i = 0; i < 360; i += 30) {
-    double r1 = Math.toRadians(i);
-    int tx1 = cX + (int) (Math.cos(r1) * 60);
-    int ty1 = cY + (int) (Math.sin(r1) * 60);
-    jPanelEditor.addFigure(new Triangulo(Color.WHITE, cX, cY, tx1 + 10, ty1, tx1 - 10, ty1));
-}
+            int gray = 30 + (int) (Math.random() * 30);
+            jPanelEditor.addFigure(new Triangulo(new Color(gray, gray, gray + 15), mx1, my1, mx2, my2, mx3, my3));
 
-jPanelEditor.addFigure(new Ovalo(Color.YELLOW, cX - 20, cY - 20, 40, 40));
+            int midX = mx2 + (mx3 - mx2) / 3;
+            jPanelEditor.addFigure(new Triangulo(new Color(gray - 15, gray - 15, gray), mx2, my2, mx3, my3, midX, my1));
+        }
+
+        for (int y = horizon; y < h; y += 3) {
+            int blue = 60 + (y - horizon) / 2;
+            if (blue > 255) {
+                blue = 255;
+            }
+            jPanelEditor.addFigure(new Rectangulo(new Color(0, 30, blue), 0, y, w, 4));
+
+            if (Math.random() > 0.8) {
+                int waveX = (int) (Math.random() * w);
+                int waveW = 20 + (int) (Math.random() * 40);
+                jPanelEditor.addFigure(new Linea(new Color(100, 150, 255), waveX, y, waveX + waveW, y));
+            }
+        }
+
+        for (int i = 0; i < 60; i++) {
+            int tx = (int) (Math.random() * w);
+            int ty = horizon + (int) (Math.random() * (h - horizon));
+
+            int tw = 8 + (ty - horizon) / 25;
+            int th = 20 + (ty - horizon) / 8;
+
+            jPanelEditor.addFigure(new Rectangulo(new Color(40, 25, 10), tx - tw / 2, ty - th, tw, th));
+
+            for (int j = 0; j < 4; j++) {
+                int fw = 30 + (ty - horizon) / 6 - j * 8;
+                int fh = 40 + (ty - horizon) / 6 - j * 8;
+                int fy = ty - th + 15 - j * 15;
+
+                int green = 40 + j * 10;
+                jPanelEditor.addFigure(new Triangulo(new Color(5, green, 15), tx - fw / 2, fy, tx, fy - fh, tx + fw / 2, fy));
+            }
+        }
     }
 
     public void paintComponent(Graphics g) {
