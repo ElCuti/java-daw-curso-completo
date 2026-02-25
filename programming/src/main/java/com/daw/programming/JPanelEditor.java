@@ -100,41 +100,60 @@ public class JPanelEditor extends javax.swing.JPanel {
         window.setLocation(100, 100);
         window.setVisible(true);
 
-        Ovalo sol = new Ovalo(Color.orange, 560, 40, 120, 120);
-        Linea r1 = new Linea(Color.yellow, 620, 100, 700, 40);
-        Linea r2 = new Linea(Color.yellow, 620, 100, 700, 100);
-        Linea r3 = new Linea(Color.yellow, 620, 100, 700, 160);
-        Linea r4 = new Linea(Color.yellow, 620, 100, 560, 10);
-        Linea r5 = new Linea(Color.yellow, 620, 100, 520, 60);
+        int cX = 375;
+int cY = 250;
 
-        Rectangulo suelo = new Rectangulo(new Color(34, 139, 34), 0, 380, 750, 120);
+for (int i = 0; i < 500; i += 5) {
+    int rG = 20 + (i / 10);
+    int bG = 40 + (i / 15);
+    jPanelEditor.addFigure(new Rectangulo(new Color(10, rG % 255, bG % 255), i / 2, i / 3, 750 - i, 500 - i));
+}
 
-        Rectangulo cuerpo = new Rectangulo(new Color(200, 120, 80), 120, 230, 220, 150);
-        Triangulo tejado = new Triangulo(new Color(150, 50, 30), 120, 230, 230, 140, 340, 230);
-        Rectangulo puerta = new Rectangulo(new Color(90, 50, 30), 200, 310, 40, 70);
-        Ovalo ventana1 = new Ovalo(Color.white, 150, 260, 40, 40);
-        Ovalo ventana2 = new Ovalo(Color.white, 270, 260, 40, 40);
+for (int i = 0; i < 360; i += 2) {
+    double rad = Math.toRadians(i);
+    int x2 = cX + (int) (Math.cos(rad) * 400);
+    int y2 = cY + (int) (Math.sin(rad) * 400);
+    Color cL = (i % 10 == 0) ? Color.WHITE : new Color(100, 0, 150);
+    jPanelEditor.addFigure(new Linea(cL, cX, cY, x2, y2));
+}
 
-        Rectangulo tronco = new Rectangulo(new Color(101, 67, 33), 420, 300, 30, 80);
-        Ovalo copa1 = new Ovalo(new Color(34, 139, 34), 390, 240, 90, 70);
-        Ovalo copa2 = new Ovalo(new Color(50, 205, 50), 430, 220, 90, 80);
+for (int i = 0; i < 360; i += 10) {
+    double rad = Math.toRadians(i);
+    int ox = cX + (int) (Math.cos(rad) * 150) - 50;
+    int oy = cY + (int) (Math.sin(rad) * 150) - 50;
+    jPanelEditor.addFigure(new Ovalo(new Color(255, 200, 0), ox, oy, 100, 100));
+}
 
-        jPanelEditor.addFigure(suelo);
-        jPanelEditor.addFigure(sol);
-        jPanelEditor.addFigure(r1);
-        jPanelEditor.addFigure(r2);
-        jPanelEditor.addFigure(r3);
-        jPanelEditor.addFigure(r4);
-        jPanelEditor.addFigure(r5);
-        jPanelEditor.addFigure(cuerpo);
-        jPanelEditor.addFigure(tejado);
-        jPanelEditor.addFigure(puerta);
-        jPanelEditor.addFigure(ventana1);
-        jPanelEditor.addFigure(ventana2);
-        jPanelEditor.addFigure(tronco);
-        jPanelEditor.addFigure(copa1);
-        jPanelEditor.addFigure(copa2);
+for (int i = 0; i < 360; i += 15) {
+    double r1 = Math.toRadians(i);
+    double r2 = Math.toRadians(i + 7);
+    double r3 = Math.toRadians(i - 7);
+    
+    int x1 = cX + (int) (Math.cos(r1) * 220);
+    int y1 = cY + (int) (Math.sin(r1) * 220);
+    int x2 = cX + (int) (Math.cos(r2) * 120);
+    int y2 = cY + (int) (Math.sin(r2) * 120);
+    int x3 = cX + (int) (Math.cos(r3) * 120);
+    int y3 = cY + (int) (Math.sin(r3) * 120);
+    
+    jPanelEditor.addFigure(new Triangulo(Color.CYAN, x1, y1, x2, y2, x3, y3));
+}
 
+for (int i = 0; i < 360; i += 5) {
+    double rad = Math.toRadians(i);
+    int xL = cX + (int) (Math.cos(rad) * 100) - 15;
+    int yL = cY + (int) (Math.sin(rad) * 100) - 15;
+    jPanelEditor.addFigure(new Ovalo(Color.MAGENTA, xL, yL, 30, 30));
+}
+
+for (int i = 0; i < 360; i += 30) {
+    double r1 = Math.toRadians(i);
+    int tx1 = cX + (int) (Math.cos(r1) * 60);
+    int ty1 = cY + (int) (Math.sin(r1) * 60);
+    jPanelEditor.addFigure(new Triangulo(Color.WHITE, cX, cY, tx1 + 10, ty1, tx1 - 10, ty1));
+}
+
+jPanelEditor.addFigure(new Ovalo(Color.YELLOW, cX - 20, cY - 20, 40, 40));
     }
 
     public void paintComponent(Graphics g) {
