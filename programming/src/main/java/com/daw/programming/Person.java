@@ -1,6 +1,7 @@
 /*
  NO ES UN EJERCICIO, ES UNA INTRODUCCIÓN*/
 package com.daw.programming;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -23,7 +24,7 @@ public class Person implements Comparable<Person> {
     public static int getNumberOfPersons() {
         return numberOfPersons;
     }
-    
+
     public int getAge() {
         return age;
     }
@@ -124,9 +125,8 @@ public class Person implements Comparable<Person> {
 
     @Override
     public int compareTo(Person o) {
-        int alturaDiferencia = this.altura - o.getAltura(); 
-        return alturaDiferencia*-1;
+        int alturaDiferencia = this.altura - o.getAltura();
+        return alturaDiferencia * -1;
     }
 
-    
 }

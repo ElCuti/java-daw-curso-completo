@@ -3,7 +3,7 @@ package com.daw.programming;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Rectangulo extends Figure {
+public class Rectangulo extends Figure implements Comparable<Rectangulo> {
 
     private int width;
     private int height;
@@ -19,12 +19,17 @@ public class Rectangulo extends Figure {
     }
 
     public void draw(Graphics g) {
-        g.drawRect((int) (getCorX()*getZoom()), (int) (getCorY()*getZoom()), (int) (width*getZoom()), (int) (height*getZoom()));
+        g.drawRect((int) (getCorX() * getZoom()), (int) (getCorY() * getZoom()), (int) (width * getZoom()), (int) (height * getZoom()));
     }
 
     public void moveFigure(int movX, int movY) {
         setCorX(getCorX() + movX);
         setCorY(getCorY() + movY);
+    }
+
+    public int area() {
+        int area = width * height;
+        return area;
     }
 
     public float getWidth() {
@@ -41,5 +46,15 @@ public class Rectangulo extends Figure {
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    @Override
+    public int compareTo(Rectangulo rectangulo1) {
+        int alturaDiferencia = area() - rectangulo1.area();
+        return alturaDiferencia;
+    }
+
+    public String toString() {
+        return String.valueOf(area());
     }
 }
