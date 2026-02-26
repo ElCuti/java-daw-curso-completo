@@ -98,6 +98,8 @@ public class Person implements Comparable<Person> {
         personas.add(person3);
         Collections.sort(personas);
         System.out.println(personas);
+        Collections.sort(personas, new PersonAgeComparator());
+        System.out.println(personas);
         /*
         System.out.println(person1.name + ", " + person1.age);
         System.out.println(person2.name + ", " + person2.age);
