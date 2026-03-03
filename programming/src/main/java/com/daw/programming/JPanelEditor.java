@@ -354,33 +354,29 @@ public class JPanelEditor extends javax.swing.JPanel {
 
     private void jbMoveRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveRightActionPerformed
         int valorActual = jbSpeed.getValue();
-        int movX = valorActual;
-        int movY = 0;
-        move(movX, movY);
+        CommandMove movimiento = new CommandMove(valorActual, 0, figuras);
+        movimiento.execute();
         this.getParent().repaint();
     }//GEN-LAST:event_jbMoveRightActionPerformed
 
     private void jbMoveTopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveTopActionPerformed
         int valorActual = jbSpeed.getValue();
-        int movX = 0;
-        int movY = -1 * valorActual;
-        move(movX, movY);
+        CommandMove movimiento = new CommandMove(0, valorActual*-1, figuras);
+        movimiento.execute();
         this.getParent().repaint();
     }//GEN-LAST:event_jbMoveTopActionPerformed
 
     private void jbMoveLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveLeftActionPerformed
         int valorActual = jbSpeed.getValue();
-        int movX = -1 * valorActual;
-        int movY = 0;
-        move(movX, movY);
+        CommandMove movimiento = new CommandMove(valorActual*-1, 0, figuras);
+        movimiento.execute();
         this.getParent().repaint();
     }//GEN-LAST:event_jbMoveLeftActionPerformed
 
     private void jbMoveDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveDownActionPerformed
         int valorActual = jbSpeed.getValue();
-        int movX = 0;
-        int movY = valorActual;
-        move(movX, movY);
+        CommandMove movimiento = new CommandMove(0, valorActual, figuras);
+        movimiento.execute();
         this.getParent().repaint();
     }//GEN-LAST:event_jbMoveDownActionPerformed
 
