@@ -22,6 +22,8 @@ public class CommandMove extends Command {
     }
 
     public void undo() {
-
+        for (Figure figura : figuras) {
+            figura.moveFigure(corX * -1, corY * -1);
+        }
     }
 }

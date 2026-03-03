@@ -66,8 +66,6 @@ package com.daw.programming;
 
 import static com.daw.programming.Figure.getStroke;
 import static com.daw.programming.Figure.getZoom;
-import static com.daw.programming.Figure.setStroke;
-import static com.daw.programming.Figure.setZoom;
 import java.awt.BasicStroke;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -79,6 +77,7 @@ import java.awt.Stroke;
 
 public class JPanelEditor extends javax.swing.JPanel {
 
+    ArrayList<Command> movimientos = new ArrayList();
     ArrayList<Figure> figuras = new ArrayList();
     double typeZoom = 1;
     boolean dashed = false;
@@ -218,6 +217,7 @@ public class JPanelEditor extends javax.swing.JPanel {
         jbStrokePlus = new javax.swing.JButton();
         jbDashed = new javax.swing.JButton();
         jbStrokeLow = new javax.swing.JButton();
+        jbUndo = new javax.swing.JButton();
 
         jbMoveRight.setText("RIGHT");
         jbMoveRight.addActionListener(new java.awt.event.ActionListener() {
@@ -288,6 +288,13 @@ public class JPanelEditor extends javax.swing.JPanel {
             }
         });
 
+        jbUndo.setText("Undo");
+        jbUndo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbUndoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -295,48 +302,55 @@ public class JPanelEditor extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(246, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jbMoveDown)
-                                .addGap(36, 36, 36))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jbSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(16, 16, 16))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jbStrokeLow)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jbZoomOut))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jbStrokePlus)
+                                .addGap(87, 87, 87)
+                                .addComponent(jbDashed, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jbZoomIn))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
                                 .addComponent(jLabel1)
                                 .addGap(60, 60, 60))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jbMoveDown)
+                                .addGap(36, 36, 36))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jbSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(16, 16, 16))
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jbMoveTop)
                                 .addGap(44, 44, 44))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jbMoveLeft)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jbMoveRight, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jbZoomOut, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jbDashed, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jbZoomIn, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbStrokeLow, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jbStrokePlus, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                .addComponent(jbMoveRight, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addComponent(jbUndo)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jbDashed)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbDashed, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbStrokePlus)
+                    .addComponent(jbZoomIn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbStrokePlus)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbStrokeLow)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbZoomIn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbZoomOut)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbStrokeLow)
+                    .addComponent(jbZoomOut))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                 .addComponent(jbMoveTop)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -347,7 +361,9 @@ public class JPanelEditor extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbUndo))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -356,6 +372,7 @@ public class JPanelEditor extends javax.swing.JPanel {
         int valorActual = jbSpeed.getValue();
         CommandMove movimiento = new CommandMove(valorActual, 0, figuras);
         movimiento.execute();
+        movimientos.add(movimiento);
         this.getParent().repaint();
     }//GEN-LAST:event_jbMoveRightActionPerformed
 
@@ -363,6 +380,7 @@ public class JPanelEditor extends javax.swing.JPanel {
         int valorActual = jbSpeed.getValue();
         CommandMove movimiento = new CommandMove(0, valorActual * -1, figuras);
         movimiento.execute();
+        movimientos.add(movimiento);
         this.getParent().repaint();
     }//GEN-LAST:event_jbMoveTopActionPerformed
 
@@ -370,6 +388,7 @@ public class JPanelEditor extends javax.swing.JPanel {
         int valorActual = jbSpeed.getValue();
         CommandMove movimiento = new CommandMove(valorActual * -1, 0, figuras);
         movimiento.execute();
+        movimientos.add(movimiento);
         this.getParent().repaint();
     }//GEN-LAST:event_jbMoveLeftActionPerformed
 
@@ -377,24 +396,31 @@ public class JPanelEditor extends javax.swing.JPanel {
         int valorActual = jbSpeed.getValue();
         CommandMove movimiento = new CommandMove(0, valorActual, figuras);
         movimiento.execute();
+        movimientos.add(movimiento);
         this.getParent().repaint();
     }//GEN-LAST:event_jbMoveDownActionPerformed
 
     private void jbZoomOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbZoomOutActionPerformed
-        CommandZoom movimiento = new CommandZoom(getZoom() - 0.25);
+        double valorActual = -0.25;
+        CommandZoom movimiento = new CommandZoom(getZoom(), valorActual);
         movimiento.execute();
+        movimientos.add(movimiento);
         this.getParent().repaint();
     }//GEN-LAST:event_jbZoomOutActionPerformed
 
     private void jbZoomInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbZoomInActionPerformed
-        CommandZoom movimiento = new CommandZoom(getZoom() + 0.25);
+        double valorActual = 0.25;
+        CommandZoom movimiento = new CommandZoom(getZoom(), valorActual);
         movimiento.execute();
+        movimientos.add(movimiento);
         this.getParent().repaint();
     }//GEN-LAST:event_jbZoomInActionPerformed
 
     private void jbStrokePlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStrokePlusActionPerformed
-        CommandStroke movimiento = new CommandStroke(getStroke() + 0.25);
+        double valorActual = 0.25;
+        CommandStroke movimiento = new CommandStroke(getStroke(), valorActual);
         movimiento.execute();
+        movimientos.add(movimiento);
         this.getParent().repaint();
     }//GEN-LAST:event_jbStrokePlusActionPerformed
 
@@ -404,10 +430,19 @@ public class JPanelEditor extends javax.swing.JPanel {
     }//GEN-LAST:event_jbDashedActionPerformed
 
     private void jbStrokeLowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStrokeLowActionPerformed
-        CommandStroke movimiento = new CommandStroke(getStroke() - 0.25);
+        double valorActual = -0.25;
+        CommandStroke movimiento = new CommandStroke(getStroke(), valorActual);
         movimiento.execute();
+        movimientos.add(movimiento);
         this.getParent().repaint();
     }//GEN-LAST:event_jbStrokeLowActionPerformed
+
+    private void jbUndoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbUndoActionPerformed
+        Command movimiento = movimientos.get(movimientos.size()-1);
+        movimiento.undo();
+        movimientos.remove(movimientos.size()-1);
+        this.getParent().repaint();
+    }//GEN-LAST:event_jbUndoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -420,6 +455,7 @@ public class JPanelEditor extends javax.swing.JPanel {
     private javax.swing.JSlider jbSpeed;
     private javax.swing.JButton jbStrokeLow;
     private javax.swing.JButton jbStrokePlus;
+    private javax.swing.JButton jbUndo;
     private javax.swing.JButton jbZoomIn;
     private javax.swing.JButton jbZoomOut;
     // End of variables declaration//GEN-END:variables
