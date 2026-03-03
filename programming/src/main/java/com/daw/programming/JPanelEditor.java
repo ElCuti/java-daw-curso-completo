@@ -381,28 +381,19 @@ public class JPanelEditor extends javax.swing.JPanel {
     }//GEN-LAST:event_jbMoveDownActionPerformed
 
     private void jbZoomOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbZoomOutActionPerformed
-        double typeZoom = getZoom();
-        typeZoom -= 0.25;
-        if (typeZoom < 0.25) {
-            typeZoom = 0.25;
-        }
-        setZoom(typeZoom);
+        CommandZoom movimiento = new CommandZoom(getZoom() - 0.25);
+        movimiento.execute();
         this.getParent().repaint();
     }//GEN-LAST:event_jbZoomOutActionPerformed
 
     private void jbZoomInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbZoomInActionPerformed
-        double typeZoom = getZoom();
-        typeZoom += 0.25;
-        if (typeZoom > 2) {
-            typeZoom = 2;
-        }
-        setZoom(typeZoom);
+        CommandZoom movimiento = new CommandZoom(getZoom() + 0.25);
+        movimiento.execute();
         this.getParent().repaint();
     }//GEN-LAST:event_jbZoomInActionPerformed
 
     private void jbStrokePlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStrokePlusActionPerformed
-        double amount = 0.25;
-        CommandStroke movimiento = new CommandStroke(getStroke() + amount);
+        CommandStroke movimiento = new CommandStroke(getStroke() + 0.25);
         movimiento.execute();
         this.getParent().repaint();
     }//GEN-LAST:event_jbStrokePlusActionPerformed
@@ -413,8 +404,7 @@ public class JPanelEditor extends javax.swing.JPanel {
     }//GEN-LAST:event_jbDashedActionPerformed
 
     private void jbStrokeLowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStrokeLowActionPerformed
-        double amount = 0.25;
-        CommandStroke movimiento = new CommandStroke(getStroke() - amount);
+        CommandStroke movimiento = new CommandStroke(getStroke() - 0.25);
         movimiento.execute();
         this.getParent().repaint();
     }//GEN-LAST:event_jbStrokeLowActionPerformed
