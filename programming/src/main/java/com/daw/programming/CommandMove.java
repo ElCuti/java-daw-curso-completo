@@ -1,13 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.daw.programming;
 
-/**
- *
- * @author Alumnado
- */
-public class CommandMove {
-    
+public class CommandMove extends Command {
+
+    private int corX;
+    private int corY;
+
+    public CommandMove(int corX, int corY) {
+        this.corX = corX;
+        this.corY = corY;
+    }
+
+    public void execute() {
+
+    }
+
+    public void undo() {
+
+    }
 }

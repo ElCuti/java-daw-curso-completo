@@ -1,13 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.daw.programming;
 
-/**
- *
- * @author Alumnado
- */
-public class CommandStroke {
-    
+public class CommandStroke extends Command {
+
+    private double typeStroke;
+
+    public CommandStroke(double typeStroke) {
+        this.typeStroke = typeStroke;
+    }
+
+    public void execute() {
+
+    }
+
+    public void undo() {
+
+    }
 }
