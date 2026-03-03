@@ -361,14 +361,14 @@ public class JPanelEditor extends javax.swing.JPanel {
 
     private void jbMoveTopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveTopActionPerformed
         int valorActual = jbSpeed.getValue();
-        CommandMove movimiento = new CommandMove(0, valorActual*-1, figuras);
+        CommandMove movimiento = new CommandMove(0, valorActual * -1, figuras);
         movimiento.execute();
         this.getParent().repaint();
     }//GEN-LAST:event_jbMoveTopActionPerformed
 
     private void jbMoveLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveLeftActionPerformed
         int valorActual = jbSpeed.getValue();
-        CommandMove movimiento = new CommandMove(valorActual*-1, 0, figuras);
+        CommandMove movimiento = new CommandMove(valorActual * -1, 0, figuras);
         movimiento.execute();
         this.getParent().repaint();
     }//GEN-LAST:event_jbMoveLeftActionPerformed
@@ -401,9 +401,9 @@ public class JPanelEditor extends javax.swing.JPanel {
     }//GEN-LAST:event_jbZoomInActionPerformed
 
     private void jbStrokePlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStrokePlusActionPerformed
-        double typeStroke = getStroke();
-        typeStroke += 0.25;
-        setStroke(typeStroke);
+        double amount = 0.25;
+        CommandStroke movimiento = new CommandStroke(getStroke() + amount);
+        movimiento.execute();
         this.getParent().repaint();
     }//GEN-LAST:event_jbStrokePlusActionPerformed
 
@@ -413,9 +413,9 @@ public class JPanelEditor extends javax.swing.JPanel {
     }//GEN-LAST:event_jbDashedActionPerformed
 
     private void jbStrokeLowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStrokeLowActionPerformed
-        double typeStroke = getStroke();
-        typeStroke -= 0.25;
-        setStroke(typeStroke);
+        double amount = 0.25;
+        CommandStroke movimiento = new CommandStroke(getStroke() - amount);
+        movimiento.execute();
         this.getParent().repaint();
     }//GEN-LAST:event_jbStrokeLowActionPerformed
 
