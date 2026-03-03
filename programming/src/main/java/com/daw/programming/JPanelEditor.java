@@ -180,6 +180,16 @@ public class JPanelEditor extends javax.swing.JPanel {
         Graphics2D g2d = (Graphics2D) g.create();
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setStroke(new BasicStroke((float) getStroke()));
+        if (movimientosDeshechos.isEmpty()) {
+            jbRedo.setVisible(false);
+        } else {
+            jbRedo.setVisible(true);
+        }
+        if (movimientos.isEmpty()) {
+            jbUndo.setVisible(false);
+        } else {
+            jbUndo.setVisible(true);
+        }
         if (dashed) {
             float stroke = (float) getStroke();
             Stroke dashed = new BasicStroke(stroke, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0, new float[]{9}, 0);
@@ -189,12 +199,6 @@ public class JPanelEditor extends javax.swing.JPanel {
             g2d.setColor(figura.getColor());
             figura.draw(g2d);
 
-        }
-    }
-
-    public void move(int movX, int movY) {
-        for (Figure figura : figuras) {
-            figura.moveFigure(movX, movY);
         }
     }
 
