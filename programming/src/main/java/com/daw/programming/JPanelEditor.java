@@ -203,6 +203,13 @@ public class JPanelEditor extends javax.swing.JPanel {
         }
     }
 
+    public void ejecutar(Command movimiento) {
+        movimiento.execute();
+        movimientos.add(movimiento);
+        movimientosDeshechos.clear();
+        this.getParent().repaint();
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -388,64 +395,43 @@ public class JPanelEditor extends javax.swing.JPanel {
     private void jbMoveRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveRightActionPerformed
         int valorActual = jbSpeed.getValue();
         CommandMove movimiento = new CommandMove(valorActual, 0, figuras);
-        movimiento.execute();
-        movimientos.add(movimiento);
-        movimientosDeshechos.clear();
-        this.getParent().repaint();
+        ejecutar(movimiento);
     }//GEN-LAST:event_jbMoveRightActionPerformed
 
     private void jbMoveTopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveTopActionPerformed
         int valorActual = jbSpeed.getValue();
         CommandMove movimiento = new CommandMove(0, valorActual * -1, figuras);
-        movimiento.execute();
-        movimientos.add(movimiento);
-        movimientosDeshechos.clear();
-        this.getParent().repaint();
+        ejecutar(movimiento);
     }//GEN-LAST:event_jbMoveTopActionPerformed
 
     private void jbMoveLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveLeftActionPerformed
         int valorActual = jbSpeed.getValue();
         CommandMove movimiento = new CommandMove(valorActual * -1, 0, figuras);
-        movimiento.execute();
-        movimientos.add(movimiento);
-        movimientosDeshechos.clear();
-        this.getParent().repaint();
+        ejecutar(movimiento);
     }//GEN-LAST:event_jbMoveLeftActionPerformed
 
     private void jbMoveDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMoveDownActionPerformed
         int valorActual = jbSpeed.getValue();
         CommandMove movimiento = new CommandMove(0, valorActual, figuras);
-        movimiento.execute();
-        movimientos.add(movimiento);
-        movimientosDeshechos.clear();
-        this.getParent().repaint();
+        ejecutar(movimiento);
     }//GEN-LAST:event_jbMoveDownActionPerformed
 
     private void jbZoomOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbZoomOutActionPerformed
         double valorActual = -0.25;
         CommandZoom movimiento = new CommandZoom(getZoom(), valorActual);
-        movimiento.execute();
-        movimientos.add(movimiento);
-        movimientosDeshechos.clear();
-        this.getParent().repaint();
+        ejecutar(movimiento);
     }//GEN-LAST:event_jbZoomOutActionPerformed
 
     private void jbZoomInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbZoomInActionPerformed
         double valorActual = 0.25;
         CommandZoom movimiento = new CommandZoom(getZoom(), valorActual);
-        movimiento.execute();
-        movimientos.add(movimiento);
-        movimientosDeshechos.clear();
-        this.getParent().repaint();
+        ejecutar(movimiento);
     }//GEN-LAST:event_jbZoomInActionPerformed
 
     private void jbStrokePlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStrokePlusActionPerformed
         double valorActual = 0.25;
         CommandStroke movimiento = new CommandStroke(getStroke(), valorActual);
-        movimiento.execute();
-        movimientos.add(movimiento);
-        movimientosDeshechos.clear();
-        this.getParent().repaint();
+        ejecutar(movimiento);
     }//GEN-LAST:event_jbStrokePlusActionPerformed
 
     private void jbDashedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDashedActionPerformed
@@ -456,10 +442,7 @@ public class JPanelEditor extends javax.swing.JPanel {
     private void jbStrokeLowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStrokeLowActionPerformed
         double valorActual = -0.25;
         CommandStroke movimiento = new CommandStroke(getStroke(), valorActual);
-        movimiento.execute();
-        movimientos.add(movimiento);
-        movimientosDeshechos.clear();
-        this.getParent().repaint();
+        ejecutar(movimiento);
     }//GEN-LAST:event_jbStrokeLowActionPerformed
 
     private void jbUndoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbUndoActionPerformed
@@ -469,7 +452,7 @@ public class JPanelEditor extends javax.swing.JPanel {
             movimiento.undo();
             movimientos.remove(movimientos.size() - 1);
             this.getParent().repaint();
-        }    
+        }
     }//GEN-LAST:event_jbUndoActionPerformed
 
     private void jbRedoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRedoActionPerformed
@@ -479,7 +462,7 @@ public class JPanelEditor extends javax.swing.JPanel {
             movimientos.add(movimiento);
             movimientosDeshechos.remove(movimientosDeshechos.size() - 1);
             this.getParent().repaint();
-        }    
+        }
     }//GEN-LAST:event_jbRedoActionPerformed
 
 
