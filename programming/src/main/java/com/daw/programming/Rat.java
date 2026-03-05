@@ -29,4 +29,5 @@ public class Rat extends Animal {
         }
         System.out.println("");
     }
+
 }

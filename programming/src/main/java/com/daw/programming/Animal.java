@@ -27,4 +27,18 @@ abstract class Animal {
     public void setSpecies(String species) {
         this.species = species;
     }
+
+    public boolean eateable(Animal animal) {
+        if (this.species.equals("herbivoro")) {
+            return false;
+        } else if (this.species.equals("omnivoro")) {
+            if (animal.getSpecies().equals("herbivoro")) {
+                return true;
+            } else if (animal.getSpecies().equals("carnivoro")) {
+                return false;
+            }
+        }
+        return false;
+    }
+
 }
