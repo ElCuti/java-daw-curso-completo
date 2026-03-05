@@ -1,8 +1,8 @@
 package com.daw.programming;
 
-public class Cat extends Animals {
+public class Cat extends Animal {
 
-    public Cat(String weight, String species) {
+    public Cat(int weight, String species) {
         super(weight, species);
     }
 

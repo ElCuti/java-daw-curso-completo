@@ -1,22 +1,22 @@
 package com.daw.programming;
 
-abstract class Animals {
+abstract class Animal {
 
-    private String weight;
+    private int weight;
     private String species;
     
     abstract void print();
 
-    public Animals(String weight, String species) {
+    public Animal(int weight, String species) {
         this.weight = weight;
         this.species = species;
     }
 
-    public String getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(String weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 

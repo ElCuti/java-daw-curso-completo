@@ -35,12 +35,14 @@ com\daw\programming\Programming.class
 com\daw\programming\Challenge1_1.class
 com\daw\programming\Challenge3_4.class
 com\daw\programming\Challenge3_17a.class
+com\daw\programming\Animal.class
 com\daw\programming\Challenge4_3.class
 com\daw\programming\JPanelEditor$1.class
 com\daw\programming\Challenge5_extra.class
 com\daw\programming\Command.class
 com\daw\programming\Circle.class
 com\daw\programming\Challenge5_1.class
+com\daw\programming\Challenge6_23.class
 com\daw\programming\Challenge3_16s.class
 com\daw\programming\Challenge3_16k.class
 com\daw\programming\Challenge3_14.class
@@ -65,12 +67,14 @@ com\daw\programming\PersonAgeComparator.class
 com\daw\programming\Challenge3_16q.class
 com\daw\programming\JPanelEditor$7.class
 com\daw\programming\Challenge3_16n.class
+com\daw\programming\Rat.class
 com\daw\programming\Challenge5_19.class
 com\daw\programming\Challenge6_7.class
 com\daw\programming\Challenge6_21.class
 com\daw\programming\Challenge5_20g.class
 com\daw\programming\Challenge3_16f.class
 com\daw\programming\Ovalo.class
+com\daw\programming\Cat.class
 com\daw\programming\Challenge3_1b.class
 com\daw\programming\Challenge5_20d.class
 com\daw\programming\Challenge5_9.class
@@ -86,6 +90,7 @@ com\daw\programming\Challenge3_12.class
 com\daw\programming\Challenge3_16t.class
 com\daw\programming\Challenge2_4.class
 com\daw\programming\Challenge3_5.class
+com\daw\programming\Sheep.class
 com\daw\programming\Challenge5_13.class
 com\daw\programming\Challenge3_2.class
 com\daw\programming\Challenge3_1.class

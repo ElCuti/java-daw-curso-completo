@@ -1,10 +1,10 @@
 package com.daw.programming;
 
-public class Rats extends Animals {
+public class Rat extends Animal {
 
     private boolean hasRabies;
 
-    public Rats(String weight, String species, boolean hasRabies) {
+    public Rat(int weight, String species, boolean hasRabies) {
         super(weight, species);
         this.hasRabies = hasRabies;
     }
