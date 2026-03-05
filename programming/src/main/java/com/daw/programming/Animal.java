@@ -4,7 +4,7 @@ abstract class Animal {
 
     private int weight;
     private String species;
-    
+
     abstract void print();
 
     public Animal(int weight, String species) {
