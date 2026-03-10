@@ -6,8 +6,6 @@ abstract class Animal {
     private String species;
     private String typeHeterotrophs;
 
-    abstract void print();
-
     abstract boolean eateable(Animal animal);
 
     public Animal(int weight, String species) {
@@ -29,6 +27,10 @@ abstract class Animal {
 
     public void setSpecies(String species) {
         this.species = species;
+    }
+
+    public void print() {
+        System.out.print("Soy un " + getSpecies() + ", peso " + getWeight() + " kg");
     }
 
     public String getTypeHeterotrophs() {

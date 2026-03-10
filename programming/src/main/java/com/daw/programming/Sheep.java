@@ -6,8 +6,8 @@ public class Sheep extends Animal {
     private static int numberOfSheeps = 0;
     private String typeHeterotrophs = "herbivoro";
 
-    public Sheep(int weight, String species, String color) {
-        super(weight, species);
+    public Sheep(int weight, String color) {
+        super(weight, "oveja");
         this.color = color;
         numberOfSheeps++;
     }
@@ -16,9 +16,9 @@ public class Sheep extends Animal {
         return numberOfSheeps;
     }
 
-    @Override
-    void print() {
-        System.out.print("Soy una oveja, peso " + getWeight() + " kg, soy de la especie " + getSpecies() + " y soy de color " + getColor());
+    public void print() {
+        super.print();
+        System.out.print(" y soy de color " + getColor());
         if (getNumberOfSheeps() < 3) {
             System.out.print(" | Peligro de extincion (" + getNumberOfSheeps() + ")");
         }

@@ -6,8 +6,8 @@ public class Rat extends Animal {
     private static int numberOfRats = 0;
     private String typeHeterotrophs = "carnivoro";
 
-    public Rat(int weight, String species, boolean hasRabies) {
-        super(weight, species);
+    public Rat(int weight, boolean hasRabies) {
+        super(weight, "rata");
         this.hasRabies = hasRabies;
         numberOfRats++;
     }
@@ -16,12 +16,13 @@ public class Rat extends Animal {
         return numberOfRats;
     }
 
-    @Override
-    void print() {
+    public void print() {
         if (hasRabies) {
-            System.out.print("Soy una rata, peso " + getWeight() + " kg, soy de la especie " + getSpecies() + " y tengo la rabia");
+            super.print();
+            System.out.print(" y tengo la rabia");
         } else {
-            System.out.print("Soy una rata, peso " + getWeight() + " kg, soy de la especie " + getSpecies() + " y NO tengo la rabia");
+            super.print();
+            System.out.print(" y NO tengo la rabia");
         }
 
         if (getNumberOfRats() < 3) {

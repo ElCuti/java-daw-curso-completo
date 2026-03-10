@@ -6,16 +6,16 @@ public class Challenge6_23 {
 
     public static void main(String[] args) {
         ArrayList<Animal> granja1 = new ArrayList();
-        Rat rata1 = new Rat(2, "negra", true);
-        Rat rata2 = new Rat(1, "casera", false);
-        Sheep oveja1 = new Sheep(20, "Merina", "blanca");
-        Sheep oveja2 = new Sheep(25, "Dorper", "negra");
-        Sheep oveja3 = new Sheep(23, "Romney", "rosa");
-        Cat gato1 = new Cat(4, "Persa");
-        Cat gato2 = new Cat(3, "Abisinio");
-        Cat gato3 = new Cat(2, "Maine Coon");
-        Cat gato4 = new Cat(5, "Ragdoll");
-        Cat gato5 = new Cat(3, "Ragdoll");
+        Rat rata1 = new Rat(2, true);
+        Rat rata2 = new Rat(1, false);
+        Sheep oveja1 = new Sheep(20, "blanca");
+        Sheep oveja2 = new Sheep(25, "negra");
+        Sheep oveja3 = new Sheep(23, "rosa");
+        Cat gato1 = new Cat(4);
+        Cat gato2 = new Cat(3);
+        Cat gato3 = new Cat(2);
+        Cat gato4 = new Cat(5);
+        Cat gato5 = new Cat(3);
         granja1.add(rata1);
         granja1.add(rata2);
         granja1.add(oveja1);
