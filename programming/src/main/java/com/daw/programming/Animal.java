@@ -4,6 +4,7 @@ abstract class Animal {
 
     private int weight;
     private String species;
+    private String typeHeterotrophs;
 
     abstract void print();
 

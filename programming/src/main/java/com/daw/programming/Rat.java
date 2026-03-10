@@ -4,6 +4,7 @@ public class Rat extends Animal {
 
     private boolean hasRabies;
     private static int numberOfRats = 0;
+    private String typeHeterotrophs = "omnivoro";
 
     public Rat(int weight, String species, boolean hasRabies) {
         super(weight, species);

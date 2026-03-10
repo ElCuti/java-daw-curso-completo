@@ -3,6 +3,7 @@ package com.daw.programming;
 public class Cat extends Animal {
 
     private static int numberOfCats = 0;
+    private String typeHeterotrophs = "carnivoro";
 
     public Cat(int weight, String species) {
         super(weight, species);

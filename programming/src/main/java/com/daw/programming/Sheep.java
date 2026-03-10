@@ -4,6 +4,7 @@ public class Sheep extends Animal {
 
     private String color;
     private static int numberOfSheeps = 0;
+    private String typeHeterotrophs = "herbivoro";
 
     public Sheep(int weight, String species, String color) {
         super(weight, species);
