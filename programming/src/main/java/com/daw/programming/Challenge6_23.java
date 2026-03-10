@@ -25,7 +25,7 @@ public class Challenge6_23 {
         granja1.add(gato3);
         granja1.add(gato4);
         granja1.add(oveja3);
-        System.out.println(gato4.eateable(gato5));
+        System.out.println(rata1.eateable(rata2));
 
         for (Animal animal : granja1) {
             animal.print();

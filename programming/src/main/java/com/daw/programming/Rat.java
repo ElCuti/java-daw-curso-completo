@@ -34,19 +34,9 @@ public class Rat extends Animal {
 
     @Override
     boolean eateable(Animal animal) {
-        if (animal.getTypeHeterotrophs().equals("carnivoro") && !isHasRabies() && getWeight() > animal.getWeight() && !getSpecies().equals(animal.getSpecies())) {
-            return true;
-            //Un carnivoro se puede comer a otro cuando es mas grande que el
-            // y no son de la misma especie
-        } else if (isHasRabies()) {
-            return true;
-            //Un carnivoro se puede comer a otro siempre que tenga la rabia
-        } else if (animal.getTypeHeterotrophs().equals("herbivoro") && getWeight() > animal.getWeight()) {
-            return true;
-            //Un carnivoro se puede comer a un herbivoro siempre que sea mas pequeño
-        } else {
-            return false;
-        }
+        return (!isHasRabies() && getWeight() > animal.getWeight() && !getSpecies().equals(animal.getSpecies())) || (isHasRabies() && !getSpecies().equals(animal.getSpecies()));
+        //Un carnivoro se puede comer a otro cuando es mas grande que el
+        // y no son de la misma especie o si tiene la rabia
     }
 
     public boolean isHasRabies() {
