@@ -8,6 +8,8 @@ abstract class Animal {
 
     abstract void print();
 
+    abstract boolean eateable(Animal animal);
+
     public Animal(int weight, String species) {
         this.weight = weight;
         this.species = species;
@@ -29,17 +31,8 @@ abstract class Animal {
         this.species = species;
     }
 
-    public boolean eateable(Animal animal) {
-        if (this.species.equals("herbivoro")) {
-            return false;
-        } else if (this.species.equals("omnivoro")) {
-            if (animal.getSpecies().equals("herbivoro")) {
-                return true;
-            } else if (animal.getSpecies().equals("carnivoro")) {
-                return false;
-            }
-        }
-        return false;
+    public String getTypeHeterotrophs() {
+        return typeHeterotrophs;
     }
 
 }

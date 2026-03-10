@@ -23,4 +23,17 @@ public class Cat extends Animal {
         System.out.println("");
     }
 
+    @Override
+    boolean eateable(Animal animal) {
+        if (animal.getTypeHeterotrophs().equals("carnivoro") && getWeight() > animal.getWeight() && !getSpecies().equals(animal.getSpecies())) {
+            return true;
+            //Un carnivoro se puede comer a otro cuando es mas grande que el
+            // y no son de la misma especie
+        } else if (animal.getTypeHeterotrophs().equals("herbivoro") && getWeight() > animal.getWeight()) {
+            return true;
+            //Un carnivoro se puede comer a un herbivoro siempre que sea mas pequeño
+        } else {
+            return false;
+        }
+    }
 }

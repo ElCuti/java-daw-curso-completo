@@ -33,4 +33,9 @@ public class Sheep extends Animal {
         this.color = color;
     }
 
+    @Override
+    boolean eateable(Animal animal) {
+        return false; //La oveja no se va a comer a nadie
+    }
+
 }
