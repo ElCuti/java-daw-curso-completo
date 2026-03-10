@@ -38,4 +38,8 @@ public class Sheep extends Animal {
         return false; //La oveja no se va a comer a nadie
     }
 
+    public String getTypeHeterotrophs() {
+        return typeHeterotrophs;
+    }
+
 }

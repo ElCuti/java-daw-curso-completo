@@ -52,4 +52,8 @@ public class Rat extends Animal {
         return hasRabies;
     }
 
+    public String getTypeHeterotrophs() {
+        return typeHeterotrophs;
+    }
+
 }

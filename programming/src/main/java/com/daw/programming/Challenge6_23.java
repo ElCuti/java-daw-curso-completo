@@ -15,6 +15,7 @@ public class Challenge6_23 {
         Cat gato2 = new Cat(3, "Abisinio");
         Cat gato3 = new Cat(2, "Maine Coon");
         Cat gato4 = new Cat(5, "Ragdoll");
+        Cat gato5 = new Cat(3, "Ragdoll");
         granja1.add(rata1);
         granja1.add(rata2);
         granja1.add(oveja1);
@@ -24,6 +25,7 @@ public class Challenge6_23 {
         granja1.add(gato3);
         granja1.add(gato4);
         granja1.add(oveja3);
+        System.out.println(gato4.eateable(gato5));
 
         for (Animal animal : granja1) {
             animal.print();

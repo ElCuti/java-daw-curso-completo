@@ -36,4 +36,8 @@ public class Cat extends Animal {
             return false;
         }
     }
+
+    public String getTypeHeterotrophs() {
+        return typeHeterotrophs;
+    }
 }
