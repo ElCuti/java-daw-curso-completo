@@ -1,8 +1,8 @@
 package com.daw.programming;
 
-public class Bancos extends Posesion {
+public class Banco extends Posesion {
 
-    public Bancos(double purchasePrice) {
+    public Banco(double purchasePrice) {
         super(purchasePrice);
 
     }

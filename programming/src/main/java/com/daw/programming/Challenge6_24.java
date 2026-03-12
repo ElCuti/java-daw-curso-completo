@@ -7,8 +7,8 @@ public class Challenge6_24 {
     public static void main(String[] args) {
         double valorTotal = 0;
         ArrayList<Posesion> persona1 = new ArrayList();
-        Bancos banco1 = new Bancos(12000);
-        Bancos banco2 = new Bancos(2000);
+        Banco banco1 = new Banco(12000);
+        Banco banco2 = new Banco(2000);
         Coche coche1 = new Coche(15000, 300000);
         Casa casa = new Casa(100000, 10);
         persona1.add(banco1);
