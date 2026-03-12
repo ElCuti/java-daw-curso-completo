@@ -19,6 +19,7 @@ com\daw\programming\Challenge5_20f.class
 com\daw\programming\Challenge3_15b.class
 com\daw\programming\Challenge5_2.class
 com\daw\programming\Challenge5_8.class
+com\daw\programming\Coche.class
 com\daw\programming\Challenge3_16g.class
 com\daw\programming\Challenge5_20c.class
 com\daw\programming\Challenge5_20i2.class
@@ -49,6 +50,7 @@ com\daw\programming\Challenge3_14.class
 com\daw\programming\Challenge3_16r.class
 com\daw\programming\JPanelEditor$2.class
 com\daw\programming\Challenge5_15.class
+com\daw\programming\Challenge6_24.class
 com\daw\programming\Challenge2_5.class
 com\daw\programming\Challenge5_7.class
 com\daw\programming\BankAccount.class
@@ -66,6 +68,7 @@ com\daw\programming\Challenge5_16.class
 com\daw\programming\PersonAgeComparator.class
 com\daw\programming\Challenge3_16q.class
 com\daw\programming\JPanelEditor$7.class
+com\daw\programming\Posesion.class
 com\daw\programming\Challenge3_16n.class
 com\daw\programming\Rat.class
 com\daw\programming\Challenge5_19.class
@@ -110,8 +113,10 @@ com\daw\programming\Challenge3_7.class
 com\daw\programming\Challenge2_2.class
 com\daw\programming\JPanelEditor$4.class
 com\daw\programming\Challenge5_12.class
+com\daw\programming\Bancos.class
 com\daw\programming\Challenge3_16i.class
 com\daw\programming\Challenge5_20a.class
+com\daw\programming\Casa.class
 com\daw\programming\Challenge5_20h.class
 com\daw\programming\Challenge5_3.class
 com\daw\programming\Challenge3_16b.class

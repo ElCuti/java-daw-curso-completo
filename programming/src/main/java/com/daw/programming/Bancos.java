@@ -1,15 +1,15 @@
 package com.daw.programming;
 
-public class Bancos extends Posesiones {
+public class Bancos extends Posesion {
 
-    public Bancos(float purchasePrice) {
+    public Bancos(double purchasePrice) {
         super(purchasePrice);
 
     }
 
     @Override
     double valorTotal() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return getPurchasePrice();
     }
 
 }

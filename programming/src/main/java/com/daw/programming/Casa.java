@@ -1,7 +1,7 @@
 
 package com.daw.programming;
 
-public class Casa extends Posesiones {
+public class Casa extends Posesion {
     private int age;
     
     

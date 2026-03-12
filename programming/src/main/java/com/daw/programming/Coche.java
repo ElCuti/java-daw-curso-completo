@@ -1,10 +1,10 @@
 package com.daw.programming;
 
-public class Coches extends Posesiones {
+public class Coche extends Posesion {
 
     private int kilometer;
 
-    public Coches(float purchasePrice, int kilometer) {
+    public Coche(double purchasePrice, int kilometer) {
         super(purchasePrice);
         this.kilometer = kilometer;
     }
