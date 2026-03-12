@@ -5,14 +5,22 @@ public class Casa extends Posesiones {
     private int age;
     
     
-    public Casa(float purchasePrice, int age){
+    public Casa(double purchasePrice, int age){
         super(purchasePrice);
         this.age=age;
     }
 
     @Override
-    float valorTotal() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    double valorTotal() {
+        return getPurchasePrice() * Math.pow(1.1, getAge());
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
     
 }

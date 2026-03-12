@@ -1,11 +1,19 @@
 package com.daw.programming;
 
 abstract class Posesiones {
-    private float purchasePrice;
-    abstract float valorTotal();
+    private double purchasePrice;
+    abstract double valorTotal();
     
-    public Posesiones(float purchasePrice){
+    public Posesiones(double purchasePrice){
         this.purchasePrice=purchasePrice;
+    }
+
+    public double getPurchasePrice() {
+        return purchasePrice;
+    }
+
+    public void setPurchasePrice(float purchasePrice) {
+        this.purchasePrice = purchasePrice;
     }
     
     
