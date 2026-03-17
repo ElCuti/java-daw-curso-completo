@@ -22,4 +22,9 @@ public class Banco implements Posesion {
         this.valorCuenta = valorCuenta;
     }
 
+    @Override
+    public double impuesto() {
+        return 0;
+    }
+
 }

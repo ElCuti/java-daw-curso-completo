@@ -1,13 +1,15 @@
-
 package com.daw.programming;
 
 public class Casa implements Posesion {
+
     private int age;
     private double valorBase;
-    
-    public Casa(double valorBase, int age){
-        this.valorBase=valorBase;
-        this.age=age;
+    private int numeroDeCasas = 0;
+
+    public Casa(double valorBase, int age) {
+        this.valorBase = valorBase;
+        this.age = age;
+        numeroDeCasas++;
     }
 
     @Override
@@ -30,5 +32,14 @@ public class Casa implements Posesion {
     public void setValorBase(double valorBase) {
         this.valorBase = valorBase;
     }
-    
+
+    @Override
+    public double impuesto() {
+        if (numeroDeCasas > 1) {
+            return valorTotal() * 0.1;
+        } else {
+            return 0;
+        }
+    }
+
 }

@@ -1,11 +1,12 @@
 package com.daw.programming;
 
 public class Coche implements Posesion {
+
     private double valorBase;
     private int kilometer;
 
     public Coche(double valorBase, int kilometer) {
-        this.valorBase=valorBase;
+        this.valorBase = valorBase;
         this.kilometer = kilometer;
     }
 
@@ -28,5 +29,10 @@ public class Coche implements Posesion {
 
     public void setValorBase(double valorBase) {
         this.valorBase = valorBase;
+    }
+
+    @Override
+    public double impuesto() {
+        return valorTotal()*0.1;
     }
 }

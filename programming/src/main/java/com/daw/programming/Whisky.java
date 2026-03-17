@@ -52,4 +52,9 @@ public class Whisky implements Posesion {
     public void setMarca(String marca) {
         this.marca = marca;
     }
+
+    @Override
+    public double impuesto() {
+        return valorTotal() * 0.2;
+    }
 }

@@ -6,6 +6,7 @@ public class Challenge6_24 {
 
     public static void main(String[] args) {
         double valorTotal = 0;
+        double impuestosTotales = 0;
         ArrayList<Posesion> persona1 = new ArrayList();
         Banco banco1 = new Banco(12000);
         Banco banco2 = new Banco(2000);
@@ -23,8 +24,10 @@ public class Challenge6_24 {
 
         for (Posesion propiedad : persona1) {
             valorTotal += propiedad.valorTotal();
+            impuestosTotales += propiedad.impuesto();
         }
-        System.out.println("El patrimonio total es de: " + Math.round(valorTotal));
+        System.out.println("El patrimonio total es de: " + Math.round(valorTotal)
+                + "e\ny fiscalmente cuesta "+Math.round(impuestosTotales)+ "e impuestos");
     }
 
 }
