@@ -9,6 +9,7 @@ public class Banco implements Posesion {
 
     }
 
+    @Override
     public double valorTotal() {
         return getValorCuenta();
     }
