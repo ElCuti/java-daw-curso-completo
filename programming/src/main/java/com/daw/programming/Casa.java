@@ -1,18 +1,18 @@
 
 package com.daw.programming;
 
-public class Casa extends Posesion {
+public class Casa implements Posesion {
     private int age;
+    private double valorBase;
     
-    
-    public Casa(double purchasePrice, int age){
-        super(purchasePrice);
+    public Casa(double valorBase, int age){
+        this.valorBase=valorBase;
         this.age=age;
     }
 
     @Override
-    double valorTotal() {
-        return getPurchasePrice() * Math.pow(1.1, getAge());
+    public double valorTotal() {
+        return getValorBase() * Math.pow(1.1, getAge());
     }
 
     public int getAge() {
@@ -21,6 +21,14 @@ public class Casa extends Posesion {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public double getValorBase() {
+        return valorBase;
+    }
+
+    public void setValorBase(double valorBase) {
+        this.valorBase = valorBase;
     }
     
 }

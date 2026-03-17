@@ -1,15 +1,24 @@
 package com.daw.programming;
 
-public class Banco extends Posesion {
+public class Banco implements Posesion {
 
-    public Banco(double purchasePrice) {
-        super(purchasePrice);
+    private double valorCuenta;
+
+    public Banco(double valorCuenta) {
+        this.valorCuenta = valorCuenta;
 
     }
 
-    @Override
-    double valorTotal() {
-        return getPurchasePrice();
+    public double valorTotal() {
+        return getValorCuenta();
+    }
+
+    public double getValorCuenta() {
+        return valorCuenta;
+    }
+
+    public void setValorCuenta(double valorCuenta) {
+        this.valorCuenta = valorCuenta;
     }
 
 }

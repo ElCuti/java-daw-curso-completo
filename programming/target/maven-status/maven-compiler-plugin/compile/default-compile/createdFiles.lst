@@ -89,6 +89,7 @@ com\daw\programming\Time.class
 com\daw\programming\Linea.class
 com\daw\programming\JPanelEditor$10.class
 com\daw\programming\Challenge6_14.class
+com\daw\programming\Banco.class
 com\daw\programming\Challenge3_12.class
 com\daw\programming\Challenge3_16t.class
 com\daw\programming\Challenge2_4.class
@@ -113,7 +114,6 @@ com\daw\programming\Challenge3_7.class
 com\daw\programming\Challenge2_2.class
 com\daw\programming\JPanelEditor$4.class
 com\daw\programming\Challenge5_12.class
-com\daw\programming\Bancos.class
 com\daw\programming\Challenge3_16i.class
 com\daw\programming\Challenge5_20a.class
 com\daw\programming\Casa.class

@@ -1,17 +1,17 @@
 package com.daw.programming;
 
-public class Coche extends Posesion {
-
+public class Coche implements Posesion {
+    private double valorBase;
     private int kilometer;
 
-    public Coche(double purchasePrice, int kilometer) {
-        super(purchasePrice);
+    public Coche(double valorBase, int kilometer) {
+        this.valorBase=valorBase;
         this.kilometer = kilometer;
     }
 
     @Override
-    double valorTotal() {
-        return getPurchasePrice() * Math.pow(0.9, Math.round(getKilometer() / 10000));
+    public double valorTotal() {
+        return getValorBase() * Math.pow(0.9, Math.round(getKilometer() / 10000));
     }
 
     public int getKilometer() {
@@ -20,5 +20,13 @@ public class Coche extends Posesion {
 
     public void setKilometer(int kilometer) {
         this.kilometer = kilometer;
+    }
+
+    public double getValorBase() {
+        return valorBase;
+    }
+
+    public void setValorBase(double valorBase) {
+        this.valorBase = valorBase;
     }
 }
