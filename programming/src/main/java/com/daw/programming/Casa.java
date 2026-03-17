@@ -4,7 +4,7 @@ public class Casa implements Posesion {
 
     private int age;
     private double valorBase;
-    private int numeroDeCasas = 0;
+    private static int numeroDeCasas = 0;
 
     public Casa(double valorBase, int age) {
         this.valorBase = valorBase;
@@ -14,7 +14,7 @@ public class Casa implements Posesion {
 
     @Override
     public double valorTotal() {
-        return getValorBase() * Math.pow(1.1, getAge());
+        return getValorBase() + getValorBase()*0.1*getAge();
     }
 
     public int getAge() {

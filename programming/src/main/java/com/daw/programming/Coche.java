@@ -33,6 +33,6 @@ public class Coche implements Posesion {
 
     @Override
     public double impuesto() {
-        return valorTotal()*0.1;
+        return valorTotal() * 0.1;
     }
 }
