@@ -14,7 +14,7 @@ public class Casa implements Posesion {
 
     @Override
     public double valorTotal() {
-        return getValorBase() + getValorBase()*0.1*getAge();
+        return getValorBase() + getValorBase() * 0.1 * getAge();
     }
 
     public int getAge() {

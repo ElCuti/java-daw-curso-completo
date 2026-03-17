@@ -12,7 +12,7 @@ public class Coche implements Posesion {
 
     @Override
     public double valorTotal() {
-        return getValorBase() * Math.pow(0.9, Math.round(getKilometer() / 10000));
+        return getValorBase() - getValorBase() * 0.1 * (getKilometer() / 10000);
     }
 
     public int getKilometer() {
