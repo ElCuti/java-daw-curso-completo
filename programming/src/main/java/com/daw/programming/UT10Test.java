@@ -4,6 +4,8 @@
  */
 package com.daw.programming;
 
+
+import static com.daw.programming.Challenge10_3.createTableMarks;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -18,19 +20,7 @@ public class UT10Test {
 
     public static void main(String[] args) {
         Connection conn = SQLiteHelper.getConnection();
-        String sql = "CREATE TABLE users ("
-                + "  username TEXT PRIMARY KEY,"
-                + "  password TEXT"
-                + ");";
-        PreparedStatement ps;
-        try {
-            ps = conn.prepareStatement(sql);
-            ps.executeUpdate();
-        } catch (SQLException ex) {
-            Logger.getLogger(UT10Test.class.getName()).log(Level.SEVERE, null, ex);
-        }
-finally{
-            conn.close();
-        }
+        createTableMarks(conn);
+
     }
 }
