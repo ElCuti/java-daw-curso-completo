@@ -4,7 +4,7 @@
  */
 package com.daw.programming;
 
-import static com.daw.programming.Challenge10_3.createTableMarks;
+import static com.daw.programming.Challenge10_3.createTable;
 import java.sql.Connection;
 
 /**
@@ -21,11 +21,11 @@ public class UT10Test {
                 + "  mark INTEGER,"
                 + "  PRIMARY KEY (username, module) "
                 + ");";
-        createTableMarks(conn, sql);
+        createTable(conn, sql);
         String sql2 = "CREATE TABLE users ("
                 + "  username TEXT PRIMARY KEY,"
                 + "  password TEXT"
                 + ");";
-        createTableMarks(conn, sql2);
+        createTable(conn, sql2);
     }
 }
