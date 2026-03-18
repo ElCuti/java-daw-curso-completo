@@ -10,30 +10,18 @@ import java.sql.SQLException;
 
 public class SQLiteHelper {
 
-    private String url;
 
-    public SQLiteHelper(String url) {
-        this.url = url;
-    }
-
-    public Connection getConnection() {
-        String driver = "org.sqlite.JDBC";
+    public static Connection getConnection() {
+         String driver = "org.sqlite.JDBC";
+        String url = "jdbc:sqlite:E:/MiBD/daw.db";
         Connection conn = null;
         try {
             Class.forName(driver);
-            conn = DriverManager.getConnection(getUrl());
+            conn = DriverManager.getConnection(url);
             System.out.println("Connection established");
         } catch (ClassNotFoundException | SQLException ex) {
             ex.printStackTrace();
         }
         return conn;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
     }
 }
