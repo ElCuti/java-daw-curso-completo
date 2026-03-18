@@ -4,13 +4,8 @@
  */
 package com.daw.programming;
 
-
 import static com.daw.programming.Challenge10_3.createTableMarks;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -20,7 +15,17 @@ public class UT10Test {
 
     public static void main(String[] args) {
         Connection conn = SQLiteHelper.getConnection();
-        createTableMarks(conn);
-
+        String sql = "CREATE TABLE MARKS ("
+                + "  username TEXT,"
+                + "  module TEXT,"
+                + "  mark INTEGER,"
+                + "  PRIMARY KEY (username, module) "
+                + ");";
+        createTableMarks(conn, sql);
+        String sql2 = "CREATE TABLE users ("
+                + "  username TEXT PRIMARY KEY,"
+                + "  password TEXT"
+                + ");";
+        createTableMarks(conn, sql2);
     }
 }

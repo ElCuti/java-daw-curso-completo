@@ -8,12 +8,8 @@ import java.util.logging.Logger;
 
 public class Challenge10_3 {
 
-    public static void createTableMarks(Connection conn) {
-        String sql = "CREATE TABLE MARKS ("
-                + "  username TEXT PRIMARY KEY,"
-                + "  module TEXT"
-                + "  mark INT"
-                + ");";
+    public static void createTable(Connection conn, String sql) {
+
         PreparedStatement ps;
         try {
             ps = conn.prepareStatement(sql);
@@ -25,4 +21,3 @@ public class Challenge10_3 {
 
     }
 }
-
