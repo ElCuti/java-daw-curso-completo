@@ -18,10 +18,11 @@ public class UT10Test {
     public static void main(String[] args) {
         Connection conn = SQLiteHelper.getConnection();
         try {
-            String sql = "INSERT INTO users (username, password) values (?, ?);";
+            String sql = "INSERT INTO MARKS (username, module, mark) values (?, ?, ?);";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, "Pepe");
-            ps.setString(2, "muydificil");
+            ps.setString(1, "Juanjo");
+            ps.setString(2, "Sistemas Informaticos");
+            ps.setString(3, "3");
             int numRows = ps.executeUpdate();
             System.out.println(numRows + " row(s) inserted.");
         } catch (SQLException ex) {

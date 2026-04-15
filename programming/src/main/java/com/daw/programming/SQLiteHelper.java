@@ -10,7 +10,6 @@ import java.sql.SQLException;
 
 public class SQLiteHelper {
 
-
     public static Connection getConnection() {
         String driver = "org.sqlite.JDBC";
         String url = "jdbc:sqlite:E:/MiBD/daw.db";
